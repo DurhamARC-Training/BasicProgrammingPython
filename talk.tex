@@ -2,7 +2,7 @@
 \usepackage{pgfpages}
 \usepackage{graphicx}
 %\setbeameroption{hide notes}
-\setbeameroption{show notes}
+\part{\part{title}}\setbeameroption{show notes}
 %\setbeameroption{show notes on second screen=right}
 \setbeamercolor{note page}{bg=white}
 %\setbeamercolor{note title}{bg=white}
@@ -182,7 +182,7 @@
 \title{Learn how to programme (in Python)}%\\ \includegraphics{karatedoklein.jpg}}
 %\subtitle{Research Highlights}
 \author{Marion Weinzierl}
-\date{July 7, 2020}
+\date{September 17, 2020}
 \institute{Advanced Research Computing
 \\[4pt]
 \href{https://twitter.com/arc_du}{\tt \scriptsize @arc\_du}
@@ -335,7 +335,7 @@ Steps:
 \end{itemize}
 
 \note{
-Now, how do we get the computer to do these things for us? This is what we ar doing: We write the program in a language that we as human beings (with some training) can understand. As the computer won't be able to understand the code that way, we then compile it, which means that we translate it into computer language. Then we execute the program and, given we have made no mistake, the computer will get working for us.  
+Now, how do we get the computer to do these things for us? This is what we are doing: We write the program in a language that we as human beings (with some training) can understand. As the computer won't be able to understand the code that way, we then compile it, which means that we translate it into computer language. Then we execute the program and, given we have made no mistake, the computer will get working for us.  
 }
 
 \end{frame}
@@ -1212,7 +1212,7 @@ for myFile in myFileList:
 \end{frame}
 
 \note{
-Given the previous example you might wonder what this kind of loop is useful for, but as soon as you start programming you will find that you use it a lot. Practical examples would be looping over all the files in a directory, or all the files in a file list, as shown here. As I had mentioned before, you can directly loop over all elements in a list, so the second and third example are actually equivalent.
+Given the previous example you might wonder what this kind of loop is useful for, but as soon as you start programming you will find that you use it a lot. Practical examples would be looping over all the files in a directory, or all the files in a file list, as shown here. As I had mentioned before, you can directly loop over all elements in a list, so the second and third example are actually equivalent if myFileList contains 100 elements.
 }
 
 
@@ -1367,7 +1367,7 @@ This is where functions come into play. In fact, we have already used functions 
 \end{frame}
 
 \note{
-What do we need to write our own functions? We need to know how we define our function, and which arguments, or parameters, it accepts. We need to define whether the function is only supposed to do something, like the print statement take its arguments and prints it on the screen, or the write function writes text into a file. Or whether we want it to return a value that, for example, can be asigned to a variable, like the input function. It will also become important that we are aware of how we should name our functions and variables, and from where in our program we can access them.
+What do we need to write our own functions? We need to know how we define our function, and which arguments, or parameters, it accepts. We need to define whether the function is only supposed to do something, like the print statement take its arguments and prints them on the screen, or the write function writes text into a file. Or whether we want it to return a value that, for example, can be assigned to a variable, like the input function. It will also become important that we are aware of how we should name our functions and variables, and from where in our program we can access them.
 }
 
 
@@ -1404,7 +1404,7 @@ As you can see here, we assign the result of the function call to a new variable
 \vspace{5pt}
 \uncover<3>{\alert{We should really give the functions and variables better names!}}
 \note<3>{
-Also, this code gives you a counterexample of good naming practice. If I look at the function calls I cannot guess at all what the functions will do, or what the variable will contain. It is good practice that your function and variable names make it very clear what they are. Do not use cryptic abbreviations or names like ``a, b c'', or ``x1, x2, x3''. I have seen this very often, and the same applies as I have already said about comments: If somebody else looks at your code, or if you look at your code at a later point, things might not make sense anymore at all. In fact, if your variable and function names are meaningful you will need much less comments to make it understandable. 
+Also, this code gives you a counter-example of good naming practice. If I look at the function calls I cannot guess at all what the functions will do, or what the variable will contain. It is good practice that your function and variable names make it very clear what they are. Do not use cryptic abbreviations or names like ``a, b c'', or ``x1, x2, x3''. I have seen this very often, and the same applies as I have already said about comments: If somebody else looks at your code, or if you look at your code at a later point, things might not make sense anymore at all. In fact, if your variable and function names are meaningful you will need much less comments to make it understandable. 
 }
 \end{frame}
 
@@ -1450,7 +1450,7 @@ Also, this code gives you a counterexample of good naming practice. If I look at
 
 \bigskip
 
-https://realpython.com/python-thinking-recursively/
+\url{https://realpython.com/python-thinking-recursively/}
 
 \end{frame}
 
@@ -1474,7 +1474,7 @@ You could try
 	\item thinking about how to best name the variables and functions in the examples above, and why meaningful names are crucial,
 	\item writing your own functions, and let one be called from within the other, 
 	\item writing a code that uses all that you have learned today,  
-	\item use the Python debugger to step through your code,
+%	\item use the Python debugger to step through your code,
 	\item ... 
 \end{itemize}
 
