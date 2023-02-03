@@ -181,8 +181,8 @@
 % title info
 \title{Learn how to programme (in Python)}%\\ \includegraphics{karatedoklein.jpg}}
 %\subtitle{Research Highlights}
-\author{Marion Weinzierl}
-\date{February 9, 2021}
+\author{Marion Weinzierl, Jiada Tu, Jordan Byers}
+\date{February 13, 2023}
 \institute{Advanced Research Computing
 \\[4pt]
 \href{https://twitter.com/arc_du}{\tt \scriptsize @arc\_du}
@@ -684,7 +684,7 @@ print("2+5 = ", 2 + 5)
 As I said before, ``print'' expects a string or something that can be converted to a string. Here are some examples of what happens if I am dealing with integers. Please try each of these examples for yourself, and see what the output is. One will give you an error.
 [let students try]
 In the first case, the interpreter recognises that I have two integers that want to be added together, and gives me the answer. 
-The second case produces an error and says ``TypeError: can only concatenate str (not "int") to str''. The plus sign actually means two different things for numbers and for strings! You can ``glue'' two strings together using the plus sign, and you can add to numbers together, as we would expect. 
+The second case produces an error and says ``TypeError: can only concatenate str (not "int") to str''. The plus sign actually means two different things for numbers and for strings! You can ``glue'' two strings together using the plus sign, and you can add two numbers together, as we would expect. 
 }
 \newpage
 \note{
@@ -865,167 +865,198 @@ I'll give you about 10 minutes, then I'll go with you over possible solutions fo
 
 \section{Getting Data in and out}
 \note{
-Now that we have covered the basics, let's move on to the next level. I expect that most of you are interested in processing data in one way or the other. Most times, we do not want to explicitely write our data into our code, which is also called ``hardcoding'', and has a bad reputation.
-
-Instead, we want to be able to provide data during runtime, and have a general program that is able to process the data.
-
-How then do we get the data in and out of our program? 
+	Now that we have covered the basics, let's move on to the next level. I expect that most of you are interested in processing data in one way or the other. Most times, we do not want to explicitly write our data into our code, which is also called ``hardcoding'', and has a bad reputation.
+	
+	Instead, we want to be able to provide data during runtime, and have a general program that is able to process the data.
+	
+	How then do we get the data in and out of our program? 
 }
 
 \begin{frame}[fragile,wide]{User Input}
-
-\begin{lstlisting}[language=Python]
-# Get some user input
-
-x = input()
-
-print(x)
-
-type(x)   # This will be a string  
-          # if you don't convert it
-
-# Get the user's name
-
-name = input("What's you name?")
-
-print("Hello " + name)
-\end{lstlisting}
-
+	
+	\begin{lstlisting}[language=Python]
+		# Get some user input
+		
+		x = input()
+		
+		print(x)
+		
+		type(x)   # This will be a string  
+		# if you don't convert it
+		
+		# Get the user's name
+		
+		name = input("What's you name?")
+		
+		print("Hello " + name)
+	\end{lstlisting}
+	
 \end{frame}
 
 \note{
-As an equivalent to the print statement, there is the input statement. It just takes the input from the command line or terminal, and you can do with it whatever you like. For example, here I am putting it into a variable x, and then output it. You can also add a prompting message to the user to tell them what kind of input you expect. Note that, just as print outputs a string, any user input will be interpreted as of type string, regardless of whether it is made out of letters, numbers, or symbols. So you might need to convert it to whatever data type you need it to be.	
-
-This kind of user input is, of course, not suited for inputting large data sets. It is rather for getting in, for example, parameters, the path to the data set, or other settings or instructions to the program.
+	As an equivalent to the print statement, there is the input statement. It just takes the input from the command line or terminal, and you can do with it whatever you like. For example, here I am putting it into a variable x, and then output it. You can also add a prompting message to the user to tell them what kind of input you expect. Note that, just as print outputs a string, any user input will be interpreted as of type string, regardless of whether it is made out of letters, numbers, or symbols. So you might need to convert it to whatever data type you need it to be.	
+	
+	This kind of user input is, of course, not suited for inputting large data sets. It is rather for getting in, for example, parameters, the path to the data set, or other settings or instructions to the program.
 }
 
 
 \begin{frame}[fragile, wide]{Reading and writing files}
-
-\begin{lstlisting}[language=Python]
-# Create a file object
-myFile = open("testfile.txt", "w")
-\end{lstlisting}
-\bigskip
-Two things to note here:
-
-\begin{itemize}
-	\item My object ``myFile'' is different from my file ``testfile''!
-	\item There are different modes:
+	
+	\begin{lstlisting}[language=Python]
+		# Create a file object
+		myFile = open("testfile.txt", "w")
+	\end{lstlisting}
+	\bigskip
+	Two things to note here:
+	
 	\begin{itemize}
-		\item read: r
-		\item (over-)write: w
-		\item append: a
-		\item read+write: w+ or r+
+		\item My object ``myFile'' is different from my file ``testfile''!
+		\item There are different modes:
+		\begin{itemize}
+			\item read: r
+			\item (over-)write: w
+			\item append: a
+			\item read+write: w+ or r+
+		\end{itemize}
 	\end{itemize}
-\end{itemize}
-
+	
 \end{frame}
 
 \note{
-The actual data input will usually happen over a file. Follow me in creating a new file. [demonstrate]
-As you will see, there is now a new file called ``tesfile.txt'' in your working directory. [show] But that is not the only thing that happened. At the same time, a file object called ``myFile'' was created in your program. These are two different things. For example, if I rename or delete the file object, my file in the file system won't change. This might sound trivial, but I thought I mention it, as it could lead to confusion.
-
-The w here stands for ``write''. If there is already a file with this name, we will now overwrite its contents. If we instead open the file with ``a'' for ``append'', we start writing after the existing content. We can also open the file in read-only mode, or in read-and-write mode.
+	The actual data input will usually happen over a file. Follow me in creating a new file. [demonstrate]
+	As you will see, there is now a new file called ``testfile.txt'' in your working directory. [show] But that is not the only thing that happened. At the same time, a file object called ``myFile'' was created in your program. These are two different things. For example, if I rename or delete the file object, my file in the file system won't change. This might sound trivial, but I thought I mention it, as it could lead to confusion.
+	
+	The w here stands for ``write''. If there is already a file with this name, we will now overwrite its contents. If we instead open the file with ``a'' for ``append'', we start writing after the existing content. We can also open the file in read-only mode, or in read-and-write mode.
 }
 
 
-\begin{frame}[fragile, wide]{Reading and writing files}
-
-
-\begin{lstlisting}[language=Python]
-# Create a file object
-myFile = open("testfile.txt", "w")
-
-# Write - note special characters!
-myFile.write("This is some text. \n \
-And some more.")
-myFile.write("\n\nI can also add numbers \
-like this: %d %d \n" %(22, 333))
-
-myFile.write(str(222))
-
-# Don't forget to close the file
-myFile.close();
-\end{lstlisting}
-\bigskip
-\footnotesize{see also \href{https://realpython.com/python-f-strings/}{f-strings}}
-
+\begin{frame}[fragile, wide]{Writing files (C-style)}
+	
+	
+	\begin{lstlisting}[language=Python]
+		# Create a file object
+		myFile = open("testfile.txt", "w")
+		
+		# Write - note special characters!
+		myFile.write("This is some text. \n \
+		And some more.")
+		myFile.write("\n\nI can also add numbers \
+		like this: %d %d \n" %(22, 333))
+		
+		myFile.write(str(222))
+		
+		# Don't forget to close the file
+		myFile.close()
+	\end{lstlisting}
+	\bigskip
+	\footnotesize{see also \href{https://www.learnpython.org/en/String_Formatting}{https://www.learnpython.org/en/String\_Formatting}
+	}
+	%\footnotesize{see also \href{https://realpython.com/python-f-strings/}{f-strings}}
 \end{frame}
 
 \note{
-Now we are writing some text and numbers into our file. Note that, again, everything needs to be a string. We can put in numbers either by converting them directly to a string, or by putting in a place holder, like this ``percent d'', for numerial or decimal values, and then putting in the number after the string. The ``backslash n'' symbol stands for a line break. 
-
-The single backslash is a line continuation character and tells the interpreter that we are not done yet with that command, but that it continues in the next line.
-
-At the end, we close our file, and then can no longer write to it unless we open it again.
-
-Try for yourself to write something into the file you just created, and then check the content of your file!
-
-[give them some minutes to do that]
+	Now we are writing some text and numbers into our file. Note that, again, everything needs to be a string. We can put in numbers either by converting them directly to a string, or by putting in a place holder, like this ``percent d'', for numerical or decimal values, and then putting in the number after the string. The ``backslash n'' symbol stands for a line break. 
+	
+	The single backslash is a line continuation character and tells the interpreter that we are not done yet with that command, but that it continues in the next line.
+	
+	At the end, we close our file, and then can no longer write to it unless we open it again.
+	
 }
 
 
-\begin{frame}[fragile, wide]{Reading and writing files}
 
-
-\begin{lstlisting}[language=Python]
-# Create a file object (this time for reading)
-myFile = open("testfile.txt", "r")
-
-# Read it and print it to screen
-print(myFile.read())
-
-# Try this:
-print(myFile.read(7))
-print(myFile.readline())
-print(myFile.readlines())
-
-# Don't forget to close the file
-myFile.close();
-\end{lstlisting}
-
+\begin{frame}[fragile, wide]{Writing files (f-strings)}
+	
+	
+	\begin{lstlisting}[language=Python]
+		# Open same file again 
+		myFile = open("testfile.txt", "a")
+		number1 = 44
+		number2 = 111
+		
+		# Append to the opened file
+		myFile.write(f"\n I have opened the \ 
+		same file again.\n More numbers: \
+		{number1} {number2}.")
+		
+		# Don't forget to close the file
+		myFile.close()
+	\end{lstlisting}
+	\bigskip
+	
+	\footnotesize{see also \href{https://realpython.com/python-f-strings/}{f-strings}}
 \end{frame}
 
 \note{
-In the next step, we will read out data from the file that we have just created. There are different ways of doing this. In this example, I combine the reading directly with a print statement, so that I see the result. Usually you would probably put the output of the reading operation into a variable, and continue to process it.
+	
+	This similar as on the previous slide. We open the same file in append-mode and add some more lines, using f-strings instead of C-style string formatting for including numbers.
+	
+	F-strings are faster. 
+	
+	Try for yourself to write something into the file using either or both styles, and then check the content of your file! We will use this file in a moment to read the content back into a Python program.
+	
+	[give them some minutes to do that]
+}
 
-Have a go with these four different version of file reading. [give them some minutes] 
+\begin{frame}[fragile, wide]{Reading files}
+	
+	
+	\begin{lstlisting}[language=Python]
+		# Create a file object (this time for reading)
+		myFile = open("testfile.txt", "r")
+		
+		# Read it and print it to screen
+		print(myFile.read())
+		
+		# Try this:
+		print(myFile.read(7))
+		print(myFile.readline())
+		print(myFile.readlines())
+		
+		# Don't forget to close the file
+		myFile.close()
+	\end{lstlisting}
+	
+\end{frame}
 
-You have seen that you can read the whole file in one go, read single characters from the file, or a whole line. If you apply the ``readline'' command repeatedly, it will go on to the next line of your file.
-
-Interesting is the output of the ``readlines'' command. It gives you a structure that has all the lines of the file in it, as separate strings, divided by commas.
+\note{
+	In the next step, we will read out data from the file that we have just created. There are different ways of doing this. In this example, I combine the reading directly with a print statement, so that I see the result. Usually you would probably put the output of the reading operation into a variable, and continue to process it.
+	
+	Have a go with these four different version of file reading. [give them some minutes] 
+	
+	You have seen that you can read the whole file in one go, read single characters from the file, or a whole line. If you apply the ``readline'' command repeatedly, it will go on to the next line of your file.
+	
+	Interesting is the output of the ``readlines'' command. It gives you a structure that has all the lines of the file in it, as separate strings, divided by commas.
 }
 
 
 \begin{frame}[fragile, wide]{What do we have here?}
-
-\begin{lstlisting}[language=Python]
-myList = [1, 2, 3, 4, 5] # A list!
-
-print(myList)
-
-print(myList[3])  # Note: [] not ()
-
-print(myList[0]) # Start with 0!
-
-print(myList[-1]) # Go backwards
-
-print(myList[1:4]) # Include first, 
-                   # exclude last
- 
-print(myList[:2]) # More slicing
-\end{lstlisting}
-
+	
+	\begin{lstlisting}[language=Python]
+		myList = [1, 2, 3, 4, 5] # A list!
+		
+		print(myList)
+		
+		print(myList[3])  # Note: [] not ()
+		
+		print(myList[0]) # Start with 0!
+		
+		print(myList[-1]) # Go backwards
+		
+		print(myList[1:4]) # Include first, 
+		# exclude last
+		
+		print(myList[:2]) # More slicing
+	\end{lstlisting}
+	
 \end{frame}
 
 \note{
-This kind of structure is called a list, and it is an essential data structure in Python programming. 
-
-We can access the entries using square brackets. The first entry in the list is entry number zero, because we are programmers now, and programmers and computer scientists like to start counting from zero. We can even go backwards, in a periodic sense, and land at the last entry of the list at -1, the second-last at -2, and so on. We can take a slice of the list, for example the entries one to three -- note that, in this notation, the first entry given is included and the last excluded. 
-If we just put a colon, we mean that we go all the way to that side, so here we go from the beginning of the list, which is entry zero, to entry 1. You can just put a colon to indicate you mean the whole list.
+	This kind of structure is called a list, and it is an essential data structure in Python programming. 
+	
+	We can access the entries using square brackets. The first entry in the list is entry number zero, because we are programmers now, and programmers and computer scientists like to start counting from zero. We can even go backwards, in a periodic sense, and land at the last entry of the list at -1, the second-last at -2, and so on. We can take a slice of the list, for example the entries one to three -- note that, in this notation, the first entry given is included and the last excluded. 
+	If we just put a colon, we mean that we go all the way to that side, so here we go from the beginning of the list, which is entry zero, to entry 1. You can just put a colon to indicate you mean the whole list.
 }
-
 
 \begin{frame}[wide]{}
 
@@ -1496,7 +1527,7 @@ I'll give you another 20 minutes to put these things into practise, and then we'
 
 \begin{itemize}
 	\item Resources from the materials slide
-	\item \href{https://www.dur.ac.uk/researchmethodscentre/community/rmcafe/}{Research Methods Cafe}
+	\item \href{https://www.durham.ac.uk/research/institutes-and-centres/research-methods/research/research-methods-cafe/}{Research Methods Cafe}
 	\item Programmers are social!
 	\item Please leave feedback: \url{https://bit.ly/arc_trainingfeedback}
 \end{itemize}
@@ -1505,7 +1536,7 @@ I'll give you another 20 minutes to put these things into practise, and then we'
 \end{frame}
 
 \note{
-That's it! You should now have a good understanding of the basics of programming. I have given you the links to further material already on one of the first slides. Of course there is always more to learn. If you start writing your own research code now and have any questions or problems, we offer drop-in sessions every Wednesday morning from 10.30 until 12. Currenly these are online using Teams, the links here brings you to the website with information on how to join. 
+That's it! You should now have a good understanding of the basics of programming. I have given you the links to further material already on one of the first slides. Of course there is always more to learn. If you start writing your own research code now and have any questions or problems, we offer drop-in sessions during term time on every first Thursday of the month, and discussion sessions on every third Thursday of the month. They take place in the Arthur Holmes building on Science Site, next to the Calman Learning Centre.  
 }
 \newpage
 \note{
