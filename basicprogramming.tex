@@ -1,8 +1,8 @@
 \documentclass[12pt,t]{beamer}
 \usepackage{pgfpages}
 \usepackage{graphicx}
-%\setbeameroption{hide notes}
-\part{\part{title}}\setbeameroption{show notes}
+\setbeameroption{show notes}
+%\part{\part{title}}\setbeameroption{show notes}
 %\setbeameroption{show notes on second screen=right}
 \setbeamercolor{note page}{bg=white}
 %\setbeamercolor{note title}{bg=white}
@@ -25,14 +25,14 @@
 	basicstyle=\footnotesize,
 	breakatwhitespace=true,
 	breaklines=false,
-	keepspaces=true,  
-	numbers=none, 
-	%numberstyle=\tiny, 
-	%numbersep=5pt, 
-	frame = single, 
+	keepspaces=true,
+	numbers=none,
+	%numberstyle=\tiny,
+	%numbersep=5pt,
+	frame = single,
 	framesep=4pt,
-	tabsize=2,	
-%	language=Python, 
+	tabsize=2,
+%	language=Python,
     frameround=tftf,
 	xleftmargin=0pt,
 	xrightmargin=0pt,
@@ -88,14 +88,14 @@
     linktoc=all,
     breaklinks=true,
     pdfpagemode=UseNone
-} 
+}
 
 
 \makeatletter
 \define@key{beamerframe}{wide}[8pt]{%
   \def\beamer@cramped{\itemsep #1\topsep0.5pt\relax}}
-\makeatother  
-  
+\makeatother
+
 % get rid of junk
 \usetheme{default}
 \beamertemplatenavigationsymbolsempty
@@ -134,6 +134,8 @@
 \setbeamertemplate{itemize subitem}{{\textendash}}
 \setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
 \setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+\setbeamerfont{note page}{family=\sffamily,size=\scriptsize} % You can change 'tiny' to the desired size
+\addtobeamertemplate{note page}{\setbeamerfont{itemize/enumerate subbody}{size=\tiny}}{}
 
 % page number
 \setbeamertemplate{footline}{%
@@ -179,10 +181,10 @@
 \setbeamertemplate{subsection page}[mine]
 
 % title info
-\title{Learn how to programme (in Python)}%\\ \includegraphics{karatedoklein.jpg}}
+\title{Basic Programming with Python (workshop)}%\\ \includegraphics{karatedoklein.jpg}}
 %\subtitle{Research Highlights}
-\author{Marion Weinzierl, Jiada Tu, Jordan Byers}
-\date{February 13, 2023}
+\author{Dmitry Nikolaenko, Jiada Tu, Jordan Byers}
+\date{September 19, 2023}
 \institute{Advanced Research Computing
 \\[4pt]
 \href{https://twitter.com/arc_du}{\tt \scriptsize @arc\_du}
@@ -195,31 +197,30 @@
 % title slide
 {
 \setbeamertemplate{footline}{} % no page number here
-\frame{
-  \titlepage
-  } 
-}
-
-
+\begin{frame}
+\titlepage
 \note{
-	Welcome to our programming course. This course will teach you the basics of computer programming. We use Python as programming language in this course, but we hope that you will be able to transfer your knowledge to other languages easily, once you got the hang of ``thinking like a programmer''. The basic principles are similar in most popular programming languages.		
-		
-	Before we start, just some words about how this course will be organised. [mute microphones, switch on cameras, ask questions in chat or unmute yourselves, colleagues here to help, break at around 11am, presentation -- live coding (type along) -- practise etc.]  
-	
-} 
+\begin{itemize}
+    \item Welcome to our programming course. This course will teach you the basics of computer programming in Python language. We hope that you'll be able to transfer your knowledge to other languages easily, once you get the hang of ``\underline{thinking like a programmer}''. The basic principles are similar in most popular programming languages.
 
+    \item Before we start, just some words about how this course will be organised. [mute microphones, switch on cameras, ask questions in chat or unmute yourselves, colleagues here to help, break at around 11am, presentation -- live coding (type along) -- practise etc.]
+\end{itemize}
+}
+\end{frame}
 
 \begin{frame}\frametitle{Outline}
 %\vspace{-25pt}
 \tableofcontents
-\end{frame}
 
 \note{
-	There are many different ways of how to give a basic introduction into programming -- and I will give you some alternative material on the next slide -- but this is the order we will do it in: After giving a short intro into how to start, we will learn about data types, variables and basic instructions. 
-	
-	One major task that you probably want to use computer programs for is data processing. Therefore, we'll look at how to get data in and out of your program next. In order to efficiently handle the data, we will than learn the fundamental control statements and how to best reuse and structure our code.
+\begin{itemize}
+    \item There are many different ways of how to give a basic introduction into programming -- and I will give you some alternative material on the next slide -- but this is the order we will do it in: After giving a short intro into how to start, we will learn about \textit{data types}, \textit{variables} and \textit{basic instructions}.
+
+	\item One major task that you probably want to use computer programs for is \textit{data processing}. Therefore, we'll look at how to get data in and out of your program next. In order to efficiently handle the data, we will then learn the fundamental control statements and how to best reuse and structure the code.
+\end{itemize}
 }
-  
+\end{frame}
+
 
 %======================================================================
 
@@ -228,12 +229,7 @@
 \begin{frame}[wide]{Materials used and recommended}
 
 \bigskip
-
 \bigskip
-
-%\centerline{
-%
-%}
 
 \begin{itemize}
 \item \href{https://wiki.python.org/moin/BeginnersGuide/NonProgrammers}{Python Wiki - Python for Non-Programmers}
@@ -242,15 +238,17 @@
 \item \href{https://swcarpentry.github.io/python-novice-inflammation/index.html}{Software Carpentry - Programming with Python}
 \end{itemize}
 
-\end{frame}
-
 \note{
-Here is a list of sources that I have used when I prepared this course. You can also find it on our ARC website under training resources. It is great for self-study, and you can use it after this course to continue on your own. The first one is the Python Wiki, which is, as a website, a good resource of Python knowledge. The link I give you here is to the site ``Python for Non-Programmers'', that has an extensive list of materials to learn Python if you have not programmed in any language before. The next one, ``How to think like a Computer Scientist'', is my personal favorite. I used some of the structure and ideas of the first few chapters for this course. It really does not assume previous knowledge or any kind of technical background.}
-
-\newpage
-
-\note{ In contrast to that, ``A Whirlwind Tour of Python'' has a faster pace, and seems to be targeted at a more technically-minded audience. Finally, you might or might not have heard of the Software Carpentry. This is an organisation aimed at providing basic software training for everyone. They have a ``train the trainers'' approach, which means that they provide material and training courses for software carpentry trainers. Thankfully, you are also allowed to access and use their material for free. This training course here gives a Python introduction at hands of a practical data processing task.   
+    Here is a list of sources that I have used when I prepared this course. You can also find it on our ARC website under training resources. It is great for self-study, and you can use it after this course to continue on your own.
+\begin{enumerate}
+    \item \textit{Python Wiki}, as a website, is a good resource of Python knowledge. The link I give you here is to the site ``Python for Non-Programmers'', that has an extensive list of materials to learn Python if you have not programmed in any language before.
+    \item \textit{How to think like a Computer Scientist}. Some of the structure and ideas of the first few chapters have been used for this course.
+    \item \textit{A Whirlwind Tour of Python} has a faster pace, and seems to be targeted at a more technically-minded audience.
+    \item \textit{Software Carpentry} is an organisation aimed at providing basic software training for everyone. They have a ``\underline{train the trainers}'' approach, which means that they provide material and training courses for software carpentry trainers. Thankfully, you are also allowed to access and use their material for free. This training course here gives a Python introduction at hands of a practical data processing task.
+\end{enumerate}
+%\newpage
 }
+\end{frame}
 
 
 \section{Introduction}
@@ -258,46 +256,49 @@ Here is a list of sources that I have used when I prepared this course. You can 
 \begin{frame}[wide]{Course Objectives}
 
 \bigskip
-
 By the end of this course you should know
-
 \bigskip
 
 \begin{itemize}
 	\item how a basic computer program is written and executed,
 	\item what basic data types and control statements are,
-	\item how to get and process user input and data, 
+	\item how to get and process user input and data,
 	\item how to structure your code using functions,
-	\item what can lead to your program not working, and what to do about it, 
+	\item what can lead to your program not working, and what to do about it,
 	\item where to find further resources to practice your Python programming.
 \end{itemize}
 
+\note{
+\begin{itemize}
+    \item We'll talk about how to get a simple computer program running, the basics in terms of \textit{data types}, \textit{variables}, \textit{if-statements} and \textit{loops}, getting data in and out of the program, \textit{functions} and \textit{variable scope}, and a bit about \textit{comments}, \textit{error types} and their \textit{handling}.
+    \item I hope that this course will give you a good foundation to continue your Python learning further. Programming is a lot about learning by doing. There are tons of online (and offline) resources as well as forums (online and offline) where you can ask for help.
+\end{itemize}
+}
 
 \end{frame}
 
-
-\note{
-Let's talk about our course objectives now. My main objective is to enable you to start programming with this course. Of course I cannot teach you all there is to learn about programming. But I hope to give you a starting point. We will talk about how to get a simple computer program running, the basics in terms of data types, variables, if-statements and loops, getting data in and out of your program, functions and variable scope, and a bit about comments and error types and error handling. By the end of the course I hope you will be able to continue from there. Programming is a lot about learning by doing. There are tons of online (and offline) resources, and also forums (online and offline) where you can ask for help. 
-}
 
 \begin{frame}[wide]{Programming and Programming Languages}
 
 \bigskip
 
 \uncover<1>{
-Why do we want to program?  
-\note<1>{Why do we want to program? Well, first of all: Why do YOU want to program? I would be interested to hear what your reason for attending this course is, and what you hope do with your programming skills. Please, just unmute yourselves, or put your reasons in the chat and I will read them out. 
-	
-[Collect reasons why participants want to learn programming]
+Why do we want to program?
+\note<1>{
+\begin{itemize}
+    \item Why do we want to program? Well, first of all: Why do YOU want to program? I'd be interested to hear what your reason for attending this course is, and what you hope to do with your programming skills. Please, just unmute yourselves, or put your reasons in the chat and I will read them out.
 
-Maybe we can summarize this as follows: We want the computer to do the work for us. 
-}	
+    \item Do a poll on Sli.do (\url{https://admin.sli.do/event/nKCTATuocUuMWsTJ2KYYom/polls})
+
+    \item Collect reasons why participants want to learn programming. Maybe we can summarize this as follows: We want the computer to do the work for us.
+\end{itemize}
+}
 }
 
 \uncover<2,3>{
 Programming means: make the computer do the work for you!
 \note<2>{
-With a computer program we tell the computer to do some of the work we cannot or do not want to do by hand. 
+With a computer program, we tell the computer to do some of the work we cannot or do not want to do by hand.
 }
 }
 
@@ -308,8 +309,8 @@ With a computer program we tell the computer to do some of the work we cannot or
 	\item Do the maths
 	\item Boring repetitions
 	\item Too complicated/extensive tasks
-	\item Big data sets 
-	\item ... 
+	\item Big data sets
+	\item ...
 \end{itemize}
 }
 \note<3>{
@@ -324,18 +325,18 @@ These can be small things, like looping over repetitive tasks, or computing some
 
 \bigskip
 
-Steps: 
+Steps:
 
 \bigskip
 
 \begin{itemize}
 	\item Write your code in high-level programming language.
-	\item Translate into low-level (machine/assembly) language. 
+	\item Translate into low-level (machine/assembly) language.
 	\item Execute program.
 \end{itemize}
 
 \note{
-Now, how do we get the computer to do these things for us? This is what we are doing: We write the program in a language that we as human beings (with some training) can understand. As the computer won't be able to understand the code that way, we then compile it, which means that we translate it into computer language. Then we execute the program and, given we have made no mistake, the computer will get working for us.  
+Now, how do we get the computer to do these things for us? This is what we are doing: We write the program in a language that we as human beings (with some training) can understand. As the computer won't be able to understand the code that way, we then compile it, that is translating it into a computer language. Then we execute the program and, given there're no mistakes, the computer will get working for us.
 }
 
 \end{frame}
@@ -346,7 +347,7 @@ Now, how do we get the computer to do these things for us? This is what we are d
 
 \bigskip
 
-Steps: 
+Steps:
 
 \bigskip
 
@@ -361,11 +362,11 @@ Steps:
 
 \note<1>{
 	Things can be made a little bit easier by using an interpreted scripting language instead of a compiled programming language.
-}	
+}
 
 \uncover<2>{\alert{Beware: Oversimplification!}}
 \note<2>{
- Please note that I am oversimplifying here a bit with regards to the terminology. The point I want to make is that there are languages, such as Python, which we will be using in this course, that translate and execute the code directly, without us having to do a separate compilation step.
+ Please note that I'm oversimplifying here a bit with regards to the terminology. The point is that there're languages, such as Python, which we will be using in this course, that translate and execute the code directly, without us having to do a separate compilation step.
 }
 
 \end{frame}
@@ -386,26 +387,27 @@ We go the easy way (so you can build it up from there):
 	\item Choose Python.
 	\item Skip the installation bit: \href{https://notebooks.dmaitre.phyip3.dur.ac.uk/arc/}{Jupyter Notebooks}.
 	\item HOWEVER: You have to type yourselves! Don't copy-paste (yet)!\footnote{If you try to copy-paste from these slides, you will sometimes get a syntax error because of the characters used in the PDF.}
-	\item Have a play.	
+	\item Have a play.
 \end{itemize}
 
+\note{
+    Now let's get started! What do we do? As I said, we choose Python. There are two reasons for this choice:
+\begin{enumerate}
+    \item It is an interpreted language, which means we do not need to compile it each time that we change the code.
+    \item It is currently very popular for a number of reasons, and people have asked us for a Python course.
+\end{enumerate}
+}
 \end{frame}
 
-\note{
-	Now let's get started! What do we do? As I said, we choose Python. There are two reasons for this choice: Firstly, it is an interpreted language, which means we do not need to compile it each time that we change the code. Secondly, it is currently very popular for a number of reasons, and people have asked us for a Python course.
-}	
-
-\newpage
-
-\note{	
-	We make things even easier for ourselves by using the Jupyter Notebooks infrastructure. However, we are not using real Jupyter Notebooks, we only use the infrastructure to type and execute our code. The ``Whirlwind Tour to Python'' book offers Jupyter Notebooks, if you are interested in trying them after this course. The reason I am using this setup is that I want to take away the setup and installation hurdle from learning to program for you. But I still want you to do the typing yourself, as that is a crucial bit in programming: Getting it into your fingers, and thinking about every character you put into your program, as every character will make a difference. You will find that out very soon for yourselves! 
-	
-}
-
 \newpage
 
 \note{
-Therefore, I will encourage you repeatedly throughout this lesson to have a play with what you have just learned. Don't be afraid to try out things, don't be afraid to make mistakes. In fact, sometimes it is useful to try and break things to find out how they work, what is possible and what isn't. My collagues and myself are here to help you if you get stuck, or if you do not understand the reason for problems or errors that you might encounter.  
+\begin{itemize}
+	\item We make things even easier for ourselves by using the \textbf{Jupyter Notebooks} infrastructure. However, we're not using real \textbf{Jupyter Notebooks}, we only use the infrastructure to type and execute our code. The reason I use this setup is that I want to take away the setup and installation hurdle from learning to program for you.
+    \item I still want you to do the typing yourself, as that is a crucial bit in programming. I encourage you to have a play with what you've just learned throughout this lesson, get it into your fingers, think about every character you put into your program as it makes a difference. You'll find that out very soon for yourselves!
+    \item My colleagues and myself are here to help you if you get stuck, or if you do not understand the reason for problems or errors that you might encounter.
+    \item {\tiny The ``\textit{Whirlwind Tour to Python}'' book offers \textbf{Jupyter Notebooks}, if you are interested in trying them after this course.}
+\end{itemize}
 }
 
 \newpage
@@ -416,15 +418,15 @@ Please try and reduce the size of this window now and get a window with a web br
 
 \newpage
 
-\note{	
-[show how to 
+\note{
+[show how to
 \begin{itemize}
 	\item login to Jupyter server,
 	%\item get ``Whirlwind Tour to Python'',
 	\item open new Jupyter Notebook,
 	\item open new Terminal and start Python interpreter,
 	\item shut down running processes
-	\item menu items in Jupyter Notebook tab. 
+	\item menu items in Jupyter Notebook tab.
 \end{itemize}
 ]
 
@@ -466,7 +468,7 @@ int main() {
 }
 \end{lstlisting}
 
-compile: 
+compile:
 
 \begin{lstlisting}
 g++ -o helloworld helloworld.cpp
@@ -475,7 +477,7 @@ g++ -o helloworld helloworld.cpp
 execute:
 
 \begin{lstlisting}
-./helloworld 
+./helloworld
 \end{lstlisting}
 
 \end{frame}
@@ -483,13 +485,13 @@ execute:
 \note{
 Let's first have a look at how this would look like in C++, a compiled language.
 
-This is the program: You include the necessary tools for inputs and outputs, and define a namespace, which means, a scope for your variable names. Don't worry about all these details now, if you go back to this slide at the end of the course, you will hopefully understand (most of) what's going on. You define your main function, print the words to your standard output, and return zero, which means, all worked well. 
+This is the program: You include the necessary tools for inputs and outputs, and define a namespace, which means, a scope for your variable names. Don't worry about all these details now, if you go back to this slide at the end of the course, you will hopefully understand (most of) what's going on. You define your main function, print the words to your standard output, and return zero, which means, all worked well.
 
-The next step, as you will remember, is compiling the program, which is what we are doing in the next box. 
+The next step, as you will remember, is compiling the program, which is what we are doing in the next box.
 
 And finally, we execute the program, and it will print ``Hello World!''.
 
-Don't be scared now, we will now do the equivalent in Python. 
+Don't be scared now, we will now do the equivalent in Python.
 }
 
 
@@ -507,13 +509,13 @@ print("Hello World!")
 \end{frame}
 
 \note{
-That's it. A bit easier. 
+That's it. A bit easier.
 
 Let's do it all together now.
 
 [Run Hello World, explain how to actually execute the program]
 
-To make it a bit more interesting, let's play around with it together. Don't worry if you don't understand why these commands look like they do, and what the syntax exactly means. We will go through this in a moment. 
+To make it a bit more interesting, let's play around with it together. Don't worry if you don't understand why these commands look like they do, and what the syntax exactly means. We will go through this in a moment.
 
 Just a short note on terminology, to make sure we are on the same page: ``syntax'' is the form of a computer program, i.e., how things are written down. On the other hand, ``semantics'' is the meaning of what is written down.
 }
@@ -527,7 +529,7 @@ Just a short note on terminology, to make sure we are on the same page: ``syntax
 \bigskip
 
 \begin{lstlisting}[language=Python]
-name = "Marion"
+name = "Dmitry"
 
 print("Hello " + name + "!")
 \end{lstlisting}
@@ -540,7 +542,7 @@ Let's see what happens if we do this. Please, again, type along as I type!
 [type and execute]
 We see that we can put the name into the output by defining it like shown here. If we change the name
 [do that and execute]
-we change the output. 
+we change the output.
 }
 
 
@@ -552,7 +554,7 @@ we change the output.
 \bigskip
 
 \begin{lstlisting}[language=Python]
-name = "Marion"
+name = "Dmitry"
 
 print("Hello " + name + "!")
 
@@ -564,8 +566,8 @@ print("I can add: 2+3 = ", mySum)
 \end{frame}
 
 \note{
-Next, let's use numbers for this, what happen's? 
-[type and execute] 
+Next, let's use numbers for this, what happen's?
+[type and execute]
 As you can see, it has actually added the numbers together. However, if you look closely at the syntax and compare with what we have done before, it has changed. What happens if we add the quotation marks around "mySum"? [demonstrate]
 
 \bigskip
@@ -585,14 +587,14 @@ A lot of it will be transferrable to other programming languages, even if the ex
 \begin{frame}[wide]{Basic Data Types}
 
 
-\bigskip 
+\bigskip
 
-\bigskip 
+\bigskip
 
 \begin{itemize}
 	\item Strings: "Heinz", 'Banana', 'He said "Hello"'
 	\item Integers: 1, 2, 3, 22222222, -777
-	\item Floats: -1.2, 0.0, 2.7182 
+	\item Floats: -1.2, 0.0, 2.7182
 	\item Booleans: True, False
 \end{itemize}
 
@@ -604,7 +606,7 @@ When you are programming, you have to be clear about what type each ``item'' you
 \begin{itemize}
 	\item Strings, which are bits of text, noted by single or double quotation marks, which can be nested.
 	\item Integers, which are whole numbers, positive or negative.
-	\item Floats, or floating points numbers, which allow for a fractional part. 
+	\item Floats, or floating points numbers, which allow for a fractional part.
 	\item Booleans, or bools, which are truth values, and can be either true or false.
 \end{itemize}
 }
@@ -612,7 +614,7 @@ When you are programming, you have to be clear about what type each ``item'' you
 
 \begin{frame}[fragile,wide]{Basics: Variables}
 
-\bigskip 
+\bigskip
 
 \begin{itemize}
 	\item``I reserve a space in memory for my data bit, and I call it by the name \textit{x}''
@@ -623,7 +625,7 @@ When you are programming, you have to be clear about what type each ``item'' you
 \end{frame}
 
 \note{
-The next essential concept you need to know for programming in Python are variables. 
+The next essential concept you need to know for programming in Python are variables.
 
 By writing ``name = value'', you are basically saying ``I reserve a space in memory for my data bit, which is value, and I call it name''. Then you can use the name to further process your data bit, as we have seen in the example with the print statement.
 }
@@ -634,7 +636,7 @@ By writing ``name = value'', you are basically saying ``I reserve a space in mem
 \begin{frame}[fragile,wide]{Examples}
 
 
-\bigskip 
+\bigskip
 
 \begin{lstlisting}[language=Python]
 print('He said "Hello"')
@@ -663,7 +665,7 @@ As a side note, many programming languages, in particular compiled programming l
 \begin{frame}[fragile,wide]{Examples}
 
 
-\bigskip 
+\bigskip
 
 
 \begin{lstlisting}[language=Python]
@@ -681,16 +683,10 @@ print("2+5 = ", 2 + 5)
 \end{frame}
 
 \note{
-As I said before, ``print'' expects a string or something that can be converted to a string. Here are some examples of what happens if I am dealing with integers. Please try each of these examples for yourself, and see what the output is. One will give you an error.
-[let students try]
-In the first case, the interpreter recognises that I have two integers that want to be added together, and gives me the answer. 
-The second case produces an error and says ``TypeError: can only concatenate str (not "int") to str''. The plus sign actually means two different things for numbers and for strings! You can ``glue'' two strings together using the plus sign, and you can add two numbers together, as we would expect. 
-}
-\newpage
-\note{
-The third example shows you how to explicitely cast a number to a string. We tell it ``add 2 and 5 together, make it a string, and concatenate it to the other string''.
-
-To make things a bit more complicated (or easier, depending on your point of view), you can do the same things by simply putting a comma instead of the plus in the print statement. Ask me about the meaning behind that at the end of the course, when we have talked about functions!
+\begin{itemize}
+    \item As I said before, ``print'' expects a string or something that can be converted to a string. Here are some examples of what happens if I am dealing with integers. Please try each of these examples for yourself, and see what the output is. One will give you an error. In the 1st case, the interpreter recognises that I have two integers that want to be added together, and gives me the answer. The 2nd case produces an error and says ``TypeError: can only concatenate str (not "int") to str''. The plus sign actually means two different things for numbers and for strings! You can ``glue'' two strings together using the plus sign, and you can add two numbers together, as we would expect. The 3rd case shows how to explicitly cast a number to a string. We tell it ``add 2 and 5 together, make it a string, and concatenate it to the other string''.
+    \item To make things a bit more complicated (or easier, depending on your point of view), you can do the same things by simply putting a comma instead of the plus in the print statement. Ask me about the meaning behind that at the end, when we have talked about functions!
+\end{itemize}
 }
 
 
@@ -732,27 +728,25 @@ You will have seen that the values are case sensitive, so you have to make sure 
 	\item String: concatenation with +
 	\item Bool: and, or, not
 	\item Numerical data: +, -, *, /, \%, **, abs, ...
-	\item Order of execution: 
+	\item Order of execution:
 		\begin{itemize}
 			\item[1.] ()
 			\item[2.] **
 			\item[3.] *,/
 			\item[4.] +, -
-			\item[5.] Left-to-right (except exponentiation!) 
-		\end{itemize}	
-	\item[$\Rightarrow$] Use parenthesis to make sure!	
+			\item[5.] Left-to-right (except exponentiation!)
+		\end{itemize}
+	\item[$\Rightarrow$] Use parenthesis to make sure!
 \end{itemize}
-
 
 \end{frame}
 
 \note{
-These are the basic operations we have for our data types: String concatenation with the plus sign, logical operations on booleans with and, or, and not, and for floats and integers we have addition, subtraction, multiplication, division, modulo (i.e., the remainder of a division), exponentiation, absolute value, and so on.
-}
-\note{
-It is very important to be aware how these operations are executed in long arithmetic expressions. Generally, if you have something like a plus b plus c, it happens from left to right: First a plus b, and then plus c. However, if you have exponents, like a to the power of b to the power of c, the right-most operations happens first: b to the power of c, and then a to the power of the result. Exponents bind stronger than times and division, i.e. exponents are computed first, and times and division is stronger than plus and minus. If in doubt, just use parenthesis. 
-
-You will have the chance to play around with this in a moment, and find out for yourselves how it works.
+\begin{itemize}
+    \item These are the basic operations we have for our data types: String concatenation with the plus sign, logical operations on booleans with and, or, and not, and for floats and integers we have addition, subtraction, multiplication, division, modulo (i.e., the remainder of a division), exponentiation, absolute value, and so on.
+    \item It is very important to be aware how these operations are executed in long arithmetic expressions. Generally, if you have something like a plus b plus c, it happens from left to right: First a plus b, and then plus c. However, if you have exponents, like a to the power of b to the power of c, the right-most operations happens first: b to the power of c, and then a to the power of the result. Exponents bind stronger than times and division, i.e. exponents are computed first, and times and division is stronger than plus and minus. If in doubt, just use parenthesis.
+    \item You will have the chance to play around with this in a moment, and find out for yourselves how it works.
+\end{itemize}
 }
 
 
@@ -760,19 +754,19 @@ You will have the chance to play around with this in a moment, and find out for 
 
 
 \begin{lstlisting}[language=Python]
-# This is my programme to demonstrate how to 
+# This is my programme to demonstrate how to
 # do simple calculations in Python.
 
 myNumber = 2
 
 myOtherNumber = myNumber+5
 
-myNumber = myOtherNumber/2 # I have to divide 
-                           # by 2 here, as the 
-                           # results are 
+myNumber = myOtherNumber/2 # I have to divide
+                           # by 2 here, as the
+                           # results are
                            # otherwise rubbish
 
-print(myNumber) 
+print(myNumber)
 \end{lstlisting}
 
 
@@ -781,9 +775,9 @@ print(myNumber)
 \note{
 But first, I want to show you two more things.
 
-One is comments. When you are writing your code, your intentions and your thinking might seem obvious, and you just want to get it running. However, believe me: If someone else is looking at your code at some point, and this someone else might be you in two weeks time, things are very probably not that obvious anymore. I found myself puzzling over my own code and why on earth I have done things like that quite often.
-
-In order to put a comment in your code you have to tell the interpreter that this bit is just for the humans reading the code, not interesting for the computer. In Python this is done by putting a hash symbol in front of the comment. This can be either at the beginning or in the middle of a line.
+\begin{itemize}
+    \item One is comments. When you are writing your code, your intentions and your thinking might seem obvious, and you just want to get it running. However, believe me: If someone else is looking at your code at some point, and this someone else might be you in two weeks time, things are very probably not that obvious anymore. I found myself puzzling over my own code and why on earth I have done things like that quite often. In order to put a comment in your code you have to tell the interpreter that this bit is just for the humans reading the code, not interesting for the computer. In Python this is done by putting a hash symbol in front of the comment. This can be either at the beginning or in the middle of a line.
+\end{itemize}
 }
 
 \begin{frame}[wide]{Debugging and Types of Errors}
@@ -797,7 +791,7 @@ In order to put a comment in your code you have to tell the interpreter that thi
 	\item Three types of errors:
 	\vspace{0.2cm}
 	\begin{itemize}
-		\item Syntax errors - written the code wrongly 
+		\item Syntax errors - written the code wrongly
 		\item Semantic errors - written the wrong code
 		\item Runtime errors - something's wrong with the code (during execution)
 	\end{itemize}
@@ -807,7 +801,9 @@ In order to put a comment in your code you have to tell the interpreter that thi
 \end{frame}
 
 \note{
-The other thing I want to mention at this points are errors. As soon as you start programming you will make mistakes. Everyone does that, even the most experienced programmers spend a lot of time hunting for bugs in their code. ``Bugs'' is a common term for errors in computer programs. It is said that this term originates from a time when actual insects in the hardware of a computer or another machine were the cause for malfunctions. There is a number of different opinions on when the term was first used, but I won't go into that here. Looking for and removing these errors is also called ``debugging''.
+\begin{itemize}
+    \item The other thing I want to mention at this points are errors. As soon as you start programming you will make mistakes. Everyone does that, even the most experienced programmers spend a lot of time hunting for bugs in their code. ``Bugs'' is a common term for errors in computer programs. It is said that this term originates from a time when actual insects in the hardware of a computer or another machine were the cause for malfunctions. There is a number of different opinions on when the term was first used, but I won't go into that here. Looking for and removing these errors is also called ``debugging''.
+\end{itemize}
 }
 \newpage
 \note{
@@ -815,11 +811,6 @@ Programming errors can broadly be divided into three types:
 \begin{itemize}
 	\item Syntax errors are usually the easiest to spot. We have seen them before, when we wrote some code that was not valid, made a typo or so. Your interpreter or compiler will tell you straight away that something is wrong.
 	\item Semantic errors are much harder to find. It means that the code that you have written does not do what you intended it to do. Because you have written it, you will probably have assumed that it does the right thing, so you have to question your thinking. Often it helps to explain your code to someone else, so that either they or yourself might spot the mistake.
-\end{itemize}
-}
-\newpage
-\note{
-\begin{itemize}		
 	\item The third type is runtime errors. These will just appear during execution, for example because your code cannot cope with a certain type of input. An example would be a code that divides a number by another number given by user input, which errors if the user input is zero or a string.
 \end{itemize}
 }
@@ -846,7 +837,7 @@ You could try
 	\item how setting parenthesis changes the result of a large arithmetic expression,
 	\item to print statements that include variables of different data types,
 	\item try to reproduce each of the error types,
-	\item ... 
+	\item ...
 \end{itemize}
 
 
@@ -859,56 +850,56 @@ I wrote down some examples here, in case you are unsure what to do, but you can 
 
 Again, if you have any question or need help, we are here to help.
 
-I'll give you about 10 minutes, then I'll go with you over possible solutions for my examples above. 
+I'll give you about 10 minutes, then I'll go with you over possible solutions for my examples above.
 }
 
 
 \section{Getting Data in and out}
 \note{
 	Now that we have covered the basics, let's move on to the next level. I expect that most of you are interested in processing data in one way or the other. Most times, we do not want to explicitly write our data into our code, which is also called ``hardcoding'', and has a bad reputation.
-	
+
 	Instead, we want to be able to provide data during runtime, and have a general program that is able to process the data.
-	
-	How then do we get the data in and out of our program? 
+
+	How then do we get the data in and out of our program?
 }
 
 \begin{frame}[fragile,wide]{User Input}
-	
+
 	\begin{lstlisting}[language=Python]
 		# Get some user input
-		
+
 		x = input()
-		
+
 		print(x)
-		
-		type(x)   # This will be a string  
+
+		type(x)   # This will be a string
 		# if you don't convert it
-		
+
 		# Get the user's name
-		
+
 		name = input("What's you name?")
-		
+
 		print("Hello " + name)
 	\end{lstlisting}
-	
+
 \end{frame}
 
 \note{
-	As an equivalent to the print statement, there is the input statement. It just takes the input from the command line or terminal, and you can do with it whatever you like. For example, here I am putting it into a variable x, and then output it. You can also add a prompting message to the user to tell them what kind of input you expect. Note that, just as print outputs a string, any user input will be interpreted as of type string, regardless of whether it is made out of letters, numbers, or symbols. So you might need to convert it to whatever data type you need it to be.	
-	
+	As an equivalent to the print statement, there is the input statement. It just takes the input from the command line or terminal, and you can do with it whatever you like. For example, here I am putting it into a variable x, and then output it. You can also add a prompting message to the user to tell them what kind of input you expect. Note that, just as print outputs a string, any user input will be interpreted as of type string, regardless of whether it is made out of letters, numbers, or symbols. So you might need to convert it to whatever data type you need it to be.
+
 	This kind of user input is, of course, not suited for inputting large data sets. It is rather for getting in, for example, parameters, the path to the data set, or other settings or instructions to the program.
 }
 
 
 \begin{frame}[fragile, wide]{Reading and writing files}
-	
+
 	\begin{lstlisting}[language=Python]
 		# Create a file object
 		myFile = open("testfile.txt", "w")
 	\end{lstlisting}
 	\bigskip
 	Two things to note here:
-	
+
 	\begin{itemize}
 		\item My object ``myFile'' is different from my file ``testfile''!
 		\item There are different modes:
@@ -919,32 +910,32 @@ I'll give you about 10 minutes, then I'll go with you over possible solutions fo
 			\item read+write: w+ or r+
 		\end{itemize}
 	\end{itemize}
-	
+
 \end{frame}
 
 \note{
 	The actual data input will usually happen over a file. Follow me in creating a new file. [demonstrate]
 	As you will see, there is now a new file called ``testfile.txt'' in your working directory. [show] But that is not the only thing that happened. At the same time, a file object called ``myFile'' was created in your program. These are two different things. For example, if I rename or delete the file object, my file in the file system won't change. This might sound trivial, but I thought I mention it, as it could lead to confusion.
-	
+
 	The w here stands for ``write''. If there is already a file with this name, we will now overwrite its contents. If we instead open the file with ``a'' for ``append'', we start writing after the existing content. We can also open the file in read-only mode, or in read-and-write mode.
 }
 
 
 \begin{frame}[fragile, wide]{Writing files (C-style)}
-	
-	
+
+
 	\begin{lstlisting}[language=Python]
 		# Create a file object
 		myFile = open("testfile.txt", "w")
-		
+
 		# Write - note special characters!
 		myFile.write("This is some text. \n \
 		And some more.")
 		myFile.write("\n\nI can also add numbers \
 		like this: %d %d \n" %(22, 333))
-		
+
 		myFile.write(str(222))
-		
+
 		# Don't forget to close the file
 		myFile.close()
 	\end{lstlisting}
@@ -955,106 +946,106 @@ I'll give you about 10 minutes, then I'll go with you over possible solutions fo
 \end{frame}
 
 \note{
-	Now we are writing some text and numbers into our file. Note that, again, everything needs to be a string. We can put in numbers either by converting them directly to a string, or by putting in a place holder, like this ``percent d'', for numerical or decimal values, and then putting in the number after the string. The ``backslash n'' symbol stands for a line break. 
-	
+	Now we are writing some text and numbers into our file. Note that, again, everything needs to be a string. We can put in numbers either by converting them directly to a string, or by putting in a place holder, like this ``percent d'', for numerical or decimal values, and then putting in the number after the string. The ``backslash n'' symbol stands for a line break.
+
 	The single backslash is a line continuation character and tells the interpreter that we are not done yet with that command, but that it continues in the next line.
-	
+
 	At the end, we close our file, and then can no longer write to it unless we open it again.
-	
+
 }
 
 
 
 \begin{frame}[fragile, wide]{Writing files (f-strings)}
-	
-	
+
+
 	\begin{lstlisting}[language=Python]
-		# Open same file again 
+		# Open same file again
 		myFile = open("testfile.txt", "a")
 		number1 = 44
 		number2 = 111
-		
+
 		# Append to the opened file
-		myFile.write(f"\n I have opened the \ 
+		myFile.write(f"\n I have opened the \
 		same file again.\n More numbers: \
 		{number1} {number2}.")
-		
+
 		# Don't forget to close the file
 		myFile.close()
 	\end{lstlisting}
 	\bigskip
-	
+
 	\footnotesize{see also \href{https://realpython.com/python-f-strings/}{f-strings}}
 \end{frame}
 
 \note{
-	
+
 	This similar as on the previous slide. We open the same file in append-mode and add some more lines, using f-strings instead of C-style string formatting for including numbers.
-	
-	F-strings are faster. 
-	
+
+	F-strings are faster.
+
 	Try for yourself to write something into the file using either or both styles, and then check the content of your file! We will use this file in a moment to read the content back into a Python program.
-	
+
 	[give them some minutes to do that]
 }
 
 \begin{frame}[fragile, wide]{Reading files}
-	
-	
+
+
 	\begin{lstlisting}[language=Python]
 		# Create a file object (this time for reading)
 		myFile = open("testfile.txt", "r")
-		
+
 		# Read it and print it to screen
 		print(myFile.read())
-		
+
 		# Try this:
 		print(myFile.read(7))
 		print(myFile.readline())
 		print(myFile.readlines())
-		
+
 		# Don't forget to close the file
 		myFile.close()
 	\end{lstlisting}
-	
+
 \end{frame}
 
 \note{
 	In the next step, we will read out data from the file that we have just created. There are different ways of doing this. In this example, I combine the reading directly with a print statement, so that I see the result. Usually you would probably put the output of the reading operation into a variable, and continue to process it.
-	
-	Have a go with these four different version of file reading. [give them some minutes] 
-	
+
+	Have a go with these four different version of file reading. [give them some minutes]
+
 	You have seen that you can read the whole file in one go, read single characters from the file, or a whole line. If you apply the ``readline'' command repeatedly, it will go on to the next line of your file.
-	
+
 	Interesting is the output of the ``readlines'' command. It gives you a structure that has all the lines of the file in it, as separate strings, divided by commas.
 }
 
 
 \begin{frame}[fragile, wide]{What do we have here?}
-	
+
 	\begin{lstlisting}[language=Python]
 		myList = [1, 2, 3, 4, 5] # A list!
-		
+
 		print(myList)
-		
+
 		print(myList[3])  # Note: [] not ()
-		
+
 		print(myList[0]) # Start with 0!
-		
+
 		print(myList[-1]) # Go backwards
-		
-		print(myList[1:4]) # Include first, 
+
+		print(myList[1:4]) # Include first,
 		# exclude last
-		
+
 		print(myList[:2]) # More slicing
 	\end{lstlisting}
-	
+
 \end{frame}
 
 \note{
-	This kind of structure is called a list, and it is an essential data structure in Python programming. 
-	
-	We can access the entries using square brackets. The first entry in the list is entry number zero, because we are programmers now, and programmers and computer scientists like to start counting from zero. We can even go backwards, in a periodic sense, and land at the last entry of the list at -1, the second-last at -2, and so on. We can take a slice of the list, for example the entries one to three -- note that, in this notation, the first entry given is included and the last excluded. 
+	This kind of structure is called a list, and it is an essential data structure in Python programming.
+
+	We can access the entries using square brackets. The first entry in the list is entry number zero, because we are programmers now, and programmers and computer scientists like to start counting from zero. We can even go backwards, in a periodic sense, and land at the last entry of the list at -1, the second-last at -2, and so on. We can take a slice of the list, for example the entries one to three -- note that, in this notation, the first entry given is included and the last excluded.
 	If we just put a colon, we mean that we go all the way to that side, so here we go from the beginning of the list, which is entry zero, to entry 1. You can just put a colon to indicate you mean the whole list.
 }
 
@@ -1080,7 +1071,7 @@ I'll give you about 10 minutes, then I'll go with you over possible solutions fo
 \note{
 This is something that is worth getting your head around. Please go to the website given here, read through it and try their examples. At the end, you will find a list of methods on lists, with links to further information. Even though the website uses all toy examples, these are really useful tools in data processing. Try to think how you would use these methods on your actual research data.
 
-I'll give you 10 minutes, then we'll continue.   
+I'll give you 10 minutes, then we'll continue.
 }
 
 
@@ -1105,7 +1096,7 @@ myArray = array('i', myList)
 \end{lstlisting}
 \bigskip
 \footnotesize{
-	see also \href{https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html}{numpy arrays}, \href{https://www.learnpython.org/en/Numpy_Arrays}{(here a tutorial)} 
+	see also \href{https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html}{numpy arrays}, \href{https://www.learnpython.org/en/Numpy_Arrays}{(here a tutorial)}
 }
 
 \end{frame}
@@ -1113,7 +1104,7 @@ myArray = array('i', myList)
 \note{
 Just as a side note, if you are working with numerical data, you might prefer to use arrays. Arrays can perform arithmetic operations directly on a slice, or the whole array.
 
-Here are two examples of how to convert lists of integers into integer arrays. I won't go into more details about that here. 
+Here are two examples of how to convert lists of integers into integer arrays. I won't go into more details about that here.
 }
 
 
@@ -1133,7 +1124,7 @@ Here are two examples of how to convert lists of integers into integer arrays. I
 
 \section{Repetitions and Conditions}
 \note{
-Now we know how to do simple computations in Python. But imagine a situation where you have read in all 1000 lines of your data file in a neat list, and now have to perform the same computation with all of them. Or you have 1000 files that you need to process all in the same way. Or you want to do repeatedly apply an operation to your data until it fulfils a certain condition. You definitely do not want to do this by hand, now that you know how to program! 
+Now we know how to do simple computations in Python. But imagine a situation where you have read in all 1000 lines of your data file in a neat list, and now have to perform the same computation with all of them. Or you have 1000 files that you need to process all in the same way. Or you want to do repeatedly apply an operation to your data until it fulfils a certain condition. You definitely do not want to do this by hand, now that you know how to program!
 }
 
 
@@ -1152,7 +1143,7 @@ print(mySum)
 \end{frame}
 
 \note{
-This is a simple while-loop. The example does not make a lot of sense, it only adds up threes as long as the sum is smaller than 100, and then prints the sum. Let's do this one together -- again, follow me in typing. [type and execute] Note: this will only print the sum once. If I now do this [add indentation before print statement and execute] it will print the sum after each step! The indentation tells the interpreter what belongs inside the while loop. 
+This is a simple while-loop. The example does not make a lot of sense, it only adds up threes as long as the sum is smaller than 100, and then prints the sum. Let's do this one together -- again, follow me in typing. [type and execute] Note: this will only print the sum once. If I now do this [add indentation before print statement and execute] it will print the sum after each step! The indentation tells the interpreter what belongs inside the while loop.
 }
 \newpage
 \note{
@@ -1173,14 +1164,14 @@ mySum = 0
 for i in range(5): # i goes from 0 to 4
 
    mySum += i # mySum = mySum + i
-	
+
 print(mySum)
 \end{lstlisting}
 
 \end{frame}
 
 \note{
-Another type of loop is a for-loop. This might look at bit complicated at first, but I'll explain it to you. The only line that really needs explanation is actually the second one in this example. What it does is that it defines a variables i -- we could call it anything else, but as it is an integer in this example, it is customary to call it i -- and we iterate through a list of values for i. It could be a list as we have seen it previously. 
+Another type of loop is a for-loop. This might look at bit complicated at first, but I'll explain it to you. The only line that really needs explanation is actually the second one in this example. What it does is that it defines a variables i -- we could call it anything else, but as it is an integer in this example, it is customary to call it i -- and we iterate through a list of values for i. It could be a list as we have seen it previously.
 }
 \newpage
 \note{
@@ -1202,11 +1193,11 @@ mySum = mySum + i
 
 i = 1
 
-mySum = mySum + i 
+mySum = mySum + i
 
 i = 2
 
-mySum = mySum + i 
+mySum = mySum + i
 $\vdots$
 \end{lstlisting}
 
@@ -1214,30 +1205,30 @@ $\vdots$
 
 \note{
 This is what happens in the loop. I have detangled it here for you. You start with the variable mySum being zero, and then define your integer i and give it its first value, which is zero. Then you add it to the sum. Next, you move one further in the range and assign the next value, 1, to i, and add that to the sum.
-Then i gets the next value, which is 2 in this example, and so on. 
+Then i gets the next value, which is 2 in this example, and so on.
 }
 
 \begin{frame}[fragile, wide]{For-Loop -- Real-Life Examples}
 
 \begin{lstlisting}[language=Python]
-for i in range(1, 100): 
+for i in range(1, 100):
 
 	filename = "myfile"+str(i)+".dat"
-	
-	#Do stuff with that file  
+
+	#Do stuff with that file
 \end{lstlisting}
 
 \begin{lstlisting}[language=Python]
-for i in range(100): 
+for i in range(100):
 
-	currentFile = myFileList[i] 
+	currentFile = myFileList[i]
 
-	#Do stuff with that file  
+	#Do stuff with that file
 \end{lstlisting}
 
 \begin{lstlisting}[language=Python]
-for myFile in myFileList: 
-	#Do stuff with that file  
+for myFile in myFileList:
+	#Do stuff with that file
 \end{lstlisting}
 
 \end{frame}
@@ -1260,7 +1251,7 @@ if num1 > num2:
          your second number.")
 else:
   print("Your first number is not bigger \
-         than your second number.")	
+         than your second number.")
 \end{lstlisting}
 
 {\footnotesize (There will be some annoying whitespace if you type it like that, just remove the linebreaks and the whitespace in the messages in your code.)}
@@ -1268,7 +1259,7 @@ else:
 \end{frame}
 
 \note{
-You will get to play with these things in a moment. 
+You will get to play with these things in a moment.
 
 \bigskip
 
@@ -1300,7 +1291,7 @@ try:
 				than your second number.")
 except:
     print("This wasn't a valid input, \
-			I'm afraid.")			   			   	
+			I'm afraid.")
 \end{lstlisting}
 
 
@@ -1334,10 +1325,10 @@ You should, however, be aware that ``try-except'' is not always great if you are
 You could try
 \begin{itemize}
 	\item writing numeric data into a file using a loop, and reading them into a list,
-	\item defining a 2d list using a `lists in a list' notation [[...],[...]] and try accessing its elements,  
+	\item defining a 2d list using a `lists in a list' notation [[...],[...]] and try accessing its elements,
 	\item doing nested loops,
 	\item thinking about what type of errors \textit{try-except} is able to catch (see slide 22),
-	\item ... 
+	\item ...
 \end{itemize}
 
 \end{frame}
@@ -1345,7 +1336,7 @@ You could try
 \note{
 We have learned quite a lot of new concepts, and I would like you to have a play with all of this now. Again, here are some examples what you could do, but feel free to come up with your own examples, and don't hesitate to ask for help.
 
-We will continue with the last part of this training in 20 minutes. 
+We will continue with the last part of this training in 20 minutes.
 }
 
 
@@ -1365,7 +1356,7 @@ We've seen functions (==useful code blocks that we need again and again, so we g
 
 \bigskip
 
-$\Rightarrow$ Somewhere someone must have written some code for that... 
+$\Rightarrow$ Somewhere someone must have written some code for that...
 
 \bigskip
 
@@ -1377,14 +1368,14 @@ Can we do that as well?
 
 
 \note{
-This is where functions come into play. In fact, we have already used functions today. We have used ``print'', ``read'', ``input'' and ``open'', given them parameters, and just accepted that this would perform more or less complex tasks. But of course, this is not some kind of computer magic, but somebody has written the code for what would happen if someone types the command ``print'' and gives it a string. We are just at the far end of a line of computer programmers that tell the computer what to do if somebody hacks on these keys on the keyboard in a certain order. 
+This is where functions come into play. In fact, we have already used functions today. We have used ``print'', ``read'', ``input'' and ``open'', given them parameters, and just accepted that this would perform more or less complex tasks. But of course, this is not some kind of computer magic, but somebody has written the code for what would happen if someone types the command ``print'' and gives it a string. We are just at the far end of a line of computer programmers that tell the computer what to do if somebody hacks on these keys on the keyboard in a certain order.
 }
 
 
 \begin{frame}[fragile, wide]{Functions}
-	
+
 	\bigskip
-	
+
 	\bigskip
 
 	\begin{itemize}
@@ -1394,7 +1385,7 @@ This is where functions come into play. In fact, we have already used functions 
 		\item Function call
 		\item Scope of variables
 	\end{itemize}
-	
+
 \end{frame}
 
 \note{
@@ -1417,25 +1408,25 @@ def anotherFunction(parameter):
 
 myVar = myFunction(22, 55)
 
-anotherFunction(myVar)		   			   	
+anotherFunction(myVar)
 \end{lstlisting}
 
 \note<1>{
 Let's write our first little function. It is simply a function that adds two parameters. (One tip, a function for sums actually already exists in Python and is called, very sensibly, ``sum''.) We define it using the keyword ``def'', and again we use colons and indentation to show what belongs into the body of the function. In order to get our result out of the function we use the ``return'' keyword. We also define another function that does not have a return value, but just prints something.
 [type function definitions, show that nothing happens on execution]
-In order to actually execute the functions we have to call them. So, we assign the output of the first function to the variable ``myVar'', and then use the second function to print the result. [demonstrate] We could have skipped the bit with the variable and used the call of the first function as parameter of the second. [demonstrate]  
+In order to actually execute the functions we have to call them. So, we assign the output of the first function to the variable ``myVar'', and then use the second function to print the result. [demonstrate] We could have skipped the bit with the variable and used the call of the first function as parameter of the second. [demonstrate]
 }
 
 \bigskip
 
 \uncover<2,3>{\alert{Variables defined inside a function are only available in that function.\\}}
 \note<2>{
-As you can see here, we assign the result of the function call to a new variable with a different name, ``myVar''. We could have chosen the same name, mySum, but what I want to make clear here is that variables have a certain scope, and are only known within this scope. If I try to access ``mySum'' from outside the function, without defining it here, the interpreter won't know it. [demonstrate] I could have two variables with the same name in here, one in the function, one outside, and one could be an integer and the other a string. They wouldn't know of each other.  
+As you can see here, we assign the result of the function call to a new variable with a different name, ``myVar''. We could have chosen the same name, mySum, but what I want to make clear here is that variables have a certain scope, and are only known within this scope. If I try to access ``mySum'' from outside the function, without defining it here, the interpreter won't know it. [demonstrate] I could have two variables with the same name in here, one in the function, one outside, and one could be an integer and the other a string. They wouldn't know of each other.
 }
 \vspace{5pt}
 \uncover<3>{\alert{We should really give the functions and variables better names!}}
 \note<3>{
-Also, this code gives you a counter-example of good naming practice. If I look at the function calls I cannot guess at all what the functions will do, or what the variable will contain. It is good practice that your function and variable names make it very clear what they are. Do not use cryptic abbreviations or names like ``a, b c'', or ``x1, x2, x3''. I have seen this very often, and the same applies as I have already said about comments: If somebody else looks at your code, or if you look at your code at a later point, things might not make sense anymore at all. In fact, if your variable and function names are meaningful you will need much less comments to make it understandable. 
+Also, this code gives you a counter-example of good naming practice. If I look at the function calls I cannot guess at all what the functions will do, or what the variable will contain. It is good practice that your function and variable names make it very clear what they are. Do not use cryptic abbreviations or names like ``a, b c'', or ``x1, x2, x3''. I have seen this very often, and the same applies as I have already said about comments: If somebody else looks at your code, or if you look at your code at a later point, things might not make sense anymore at all. In fact, if your variable and function names are meaningful you will need much less comments to make it understandable.
 }
 \end{frame}
 
@@ -1460,7 +1451,7 @@ Also, this code gives you a counter-example of good naming practice. If I look a
 %
 %myVar = myFunction(22, 55)
 %
-%anotherFunction(myVar)		   			   	
+%anotherFunction(myVar)
 %\end{lstlisting}
 %
 %
@@ -1468,8 +1459,8 @@ Also, this code gives you a counter-example of good naming practice. If I look a
 %
 %\note{
 %[do this only if enough time]
-%In order to show you in which order the interpreter steps through the code, and to give you a hint how to debug your code if it gets a bit complicated, I am showing you here how to invoke the Python debugger. 
-%As a default, Python comes with a certain toolset of functions. 
+%In order to show you in which order the interpreter steps through the code, and to give you a hint how to debug your code if it gets a bit complicated, I am showing you here how to invoke the Python debugger.
+%As a default, Python comes with a certain toolset of functions.
 %If we want to use a specific library, we have to import it like shown here. Importing a library makes an additional set of functions available for us. Here I say that, from the Python debugger library ``pdb'', I now want to use the ``set\_trace'' function. That will stop the debugger exactly here. I then can use ``s'' and return to step through the code.
 %[demonstrate--don't use Jupyter Notebook, but create file and use terminal!--and show where the variable name ``mySum'' is known and where not]
 %}
@@ -1503,17 +1494,17 @@ Don't worry, we will not talk about recursion today, I just thought I will put t
 You could try
 \begin{itemize}
 	\item thinking about how to best name the variables and functions in the examples above, and why meaningful names are crucial,
-	\item writing your own functions, and let one be called from within the other, 
-	\item writing a code that uses all that you have learned today,  
+	\item writing your own functions, and let one be called from within the other,
+	\item writing a code that uses all that you have learned today,
 %	\item use the Python debugger to step through your code,
-	\item ... 
+	\item ...
 \end{itemize}
 
 
 \end{frame}
 
 \note{
-I'll give you another 20 minutes to put these things into practise, and then we'll have a short wrap-up before we are finished! 
+I'll give you another 20 minutes to put these things into practise, and then we'll have a short wrap-up before we are finished!
 }
 
 
@@ -1536,15 +1527,15 @@ I'll give you another 20 minutes to put these things into practise, and then we'
 \end{frame}
 
 \note{
-That's it! You should now have a good understanding of the basics of programming. I have given you the links to further material already on one of the first slides. Of course there is always more to learn. If you start writing your own research code now and have any questions or problems, we offer drop-in sessions during term time on every first Thursday of the month, and discussion sessions on every third Thursday of the month. They take place in the Arthur Holmes building on Science Site, next to the Calman Learning Centre.  
+That's it! You should now have a good understanding of the basics of programming. I have given you the links to further material already on one of the first slides. Of course there is always more to learn. If you start writing your own research code now and have any questions or problems, we offer drop-in sessions during term time on every first Thursday of the month, and discussion sessions on every third Thursday of the month. They take place in the Arthur Holmes building on Science Site, next to the Calman Learning Centre.
 }
 \newpage
 \note{
-Also, despite all clichees, programmers are usually very social people and happy to help. There are lots of online forums where you can ask for help, or often even find the answer to your question by searching, as somebody else will likely have had the same question before you. If you are really into it, there are hackathons, or things like ``codewars'' or ``advent of code'' where your can test your programming skills in coding challenges.  
+Also, despite all clichees, programmers are usually very social people and happy to help. There are lots of online forums where you can ask for help, or often even find the answer to your question by searching, as somebody else will likely have had the same question before you. If you are really into it, there are hackathons, or things like ``codewars'' or ``advent of code'' where your can test your programming skills in coding challenges.
 }
 \newpage
 \note{
-Before you leave this session, it would be great if you could leave feedback on this course in the form that I have linked here, so that we can use it to improve and tailor our courses.  
+Before you leave this session, it would be great if you could leave feedback on this course in the form that I have linked here, so that we can use it to improve and tailor our courses.
 
 \bigskip
 
