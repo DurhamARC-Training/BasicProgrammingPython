@@ -50,6 +50,13 @@ To get started with teaching the course, follow these steps:
 
 4. Click on the little card styles JupyterLab-Deck icon for running a notebook as a presentation.
 
+5. It is also possible to convert the Jupyter notebook to PDF (be sure first to run all cells you want to run and save):
+
+   * Call `jupyter nbconvert --to slides --post serve .\Basics.ipynb`
+   * Go to http://localhost:8000/Basics.slides.html?print-pdf#/
+   * Print via Print to PDF function of your browser
+
+
 ## Contributing
 
 If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request. Contributions are welcome!

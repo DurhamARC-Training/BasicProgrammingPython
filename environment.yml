@@ -6,4 +6,5 @@ dependencies:
 - jupyterlab
 - jupyterlab-deck
 - python
-
+- jupyterlab_rise
+- jupyter_contrib_nbextensions
