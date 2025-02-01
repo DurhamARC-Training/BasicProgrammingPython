@@ -8,3 +8,4 @@ dependencies:
 - python
 - jupyterlab_rise
 - jupyter_contrib_nbextensions
+- jupytext

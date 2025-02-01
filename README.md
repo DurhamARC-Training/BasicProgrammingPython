@@ -57,6 +57,8 @@ To get started with teaching the course, follow these steps:
    * Print via Print to PDF function of your browser
 
 
-## Contributing
+## How to contribute
 
 If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request. Contributions are welcome!
+
+If you're a co-developer of our training course, please read the workflow we suggest on this [contribution page](development.md).
