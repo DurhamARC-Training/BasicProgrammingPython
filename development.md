@@ -16,7 +16,7 @@ Modifications can still be made directly in the Jupyter notebooks as before. How
 
 - `Basics_filled.md`: this is the `Basic_filled.ipynb` notebook (with solutions) converted into Markdown format.
 
-The idea is to edit only the full `Basics_filled.md`, while a small Python script (`filter_solutions.py`) automatically generates `Basics.md` by removing the solutions. This approach keeps both files aligned without requiring manual updates.
+The idea is to edit only the full `Basics_filled.md`, while a small Python script (`filter_md.py`) automatically generates `Basics.md` by removing the solutions. This approach keeps both files aligned without requiring manual updates.
 
 However visually, it might be still easier to edit Jupyter notebooks rather than Markdown files. Therefore, a following workflow is suggested before submitting the changes to the repository:
 
@@ -25,14 +25,14 @@ However visually, it might be still easier to edit Jupyter notebooks rather than
 ```bash
 jupytext --to md Basics_filled.ipynb
 ```
-3. Mark any solution cells you’ve added (that aren’t already marked) in the Markdown file with the start and end markers recognized by the provided `filter_solutions.py` script, as shown:
+3. Mark any solution cells you’ve added (that aren’t already marked) in the Markdown file with the start and end markers recognized by the provided `filter_md.py` script, as shown:
 ```markdown
-<!-- solution:start -->
-<!-- solution:end -->
+<!-- #solution -->
+<!-- #endsolution -->
 ```
-4. Run the `filter_solutions.py` script to remove the solution blocks, specifying the “full” (solution-inclusive) Markdown filename and your desired "no-solutions" output filename:
+4. Run the `filter_md.py` script to remove the solution blocks, specifying the “full” (solution-inclusive) Markdown filename and your desired "no-solutions" output filename:
 ```bash
-python filter_solutions.py Basics_filled.md Basics.md
+python filter_md.py Basics_filled.md Basics.md
 
 ```
 5. Convert both Markdown files back to Jupyter notebooks:

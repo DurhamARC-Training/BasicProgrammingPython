@@ -2,12 +2,12 @@
 
 """
 Usage example:
-    python generate_notebooks.py Basics_filled.md Basics.md
+    python remove_solutions.py Basics_filled.md Basics.md
 """
 
 import sys
 
-def generate_notebooks(input_file, output_file,
+def remove_solutions(input_file, output_file,
                        start_marker="<!-- #solution -->",
                        end_marker="<!-- #endsolution -->"):
     in_solution_block = False
@@ -54,4 +54,4 @@ if __name__ == "__main__":
     input_md = sys.argv[1]
     output_md = sys.argv[2]
 
-    generate_notebooks(input_md, output_md)
+    remove_solutions(input_md, output_md)
