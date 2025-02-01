@@ -4,7 +4,7 @@ This section explains the workflow how to modify and update the Jupyter notebook
 
 ## Structure and workflow
 
-The repository is organized as follows:
+The repository is organised as follows:
 
 - `Basic.ipynb`: The course's Jupyter notebook with the corresponding materials.
 
@@ -25,7 +25,7 @@ However visually, it might be still easier to edit Jupyter notebooks rather than
 ```bash
 jupytext --to md Basics_filled.ipynb
 ```
-3. Mark any solution cells you’ve added (that aren’t already marked) in the Markdown file with the start and end markers recognized by the provided `filter_md.py` script, as shown:
+3. Mark any solution cells you’ve added (that aren’t already marked) in the Markdown file with the start and end markers recognised by the provided `filter_md.py` script, as shown:
 ```markdown
 <!-- #solution -->
 <!-- #endsolution -->
