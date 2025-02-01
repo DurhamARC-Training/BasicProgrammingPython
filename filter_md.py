@@ -2,7 +2,7 @@
 
 """
 Usage example:
-    python remove_solutions.py Basics_filled.md Basics.md
+    python filter_md.py Basics_filled.md Basics.md
 """
 
 import sys
