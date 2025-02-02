@@ -41,3 +41,5 @@ jupytext --to notebook Basics_filled.md
 jupytext --to notebook Basics.md
 ```
 6. Now, instead of committing Jupyter notebooks directly, you commit their Markdown versions to the version control system (though you can still keep the Jupyter notebooks for convenience).
+
+To simplify a bit the end of the workflow (to combine steps 4-6), a bash script `generate_notebooks.sh` can be run to execute these steps all at once.
