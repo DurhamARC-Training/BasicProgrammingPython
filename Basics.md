@@ -640,7 +640,49 @@ Try to reproduce each of the error types
 <!-- #endsolution -->
 
 <!-- #region editable=true slideshow={"slide_type": "slide"} -->
-# <ins>2.</ins> Getting Data in and out
+# <ins>2.</ins> Functions
+<!-- #endregion -->
+
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+A function is a block of reusable code that performs a specific task. Functions help reduce repetition and make code easier to manage. A function is defined using the `def` keyword.
+<!-- #endregion -->
+
+* You can pass data to functions (parameters).
+* Functions can return values.
+* Functions help break down complex programs into smaller, manageable parts.
+
+```python
+# Function to add two numbers
+def add_numbers(a, b):
+    return a + b
+
+# Call the function
+result = add_numbers(3, 4)
+print(result)
+```
+
+<!-- #region editable=true slideshow={"slide_type": "slide"} -->
+## Have a play!
+<!-- #endregion -->
+
+### _Exercises_
+
+**1)** Write a function that converts Celsius to Fahrenheit. Use the formula  
+$
+\text{Fahrenheit} = (\text{Celsius} \times \frac{9}{5}) + 32
+$
+
+<!-- #solution -->
+```python
+```
+<!-- #endsolution -->
+
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+# <ins>**Part II**</ins>
+<!-- #endregion -->
+
+<!-- #region editable=true slideshow={"slide_type": "slide"} -->
+# <ins>3.</ins> Getting Data in and out
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": "notes"} -->
@@ -821,12 +863,23 @@ You have seen that you can read the whole file in one go, read single characters
 Interesting is the output of the `readlines` command. It gives you a structure that has all the lines of the file in it, as separate strings, divided by commas.
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
-# <ins>**Part II**</ins>
+<!-- #region editable=true slideshow={"slide_type": "slide"} -->
+## Have a play!
 <!-- #endregion -->
 
+### _Exercises_
+
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-# <ins>3.</ins> Data structures
+Here are some exercise ideas for "Getting data in and out":
+- Prompt the user for a filename and write a short text into it.
+- Read it back and print the lines to the screen.
+- Experiment with different modes: 'r', 'w', 'a' to see how the file content changes.
+<!-- #endregion -->
+```python
+```
+
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+# <ins>4.</ins> Data structures
 <!-- #endregion -->
 
 Python can work not only with basic data types mentioned before, but also with compound ones. Compound data types in Python are a powerful tool for organizing and storing data. Among the most commonly used are _lists_ and _dictionaries_. `For`-loops described in the next section often iterate over elements of lists or pairs of keys and values in dictionaries. But they can also iterate over a series of numbers generated for indexing or calculations by the `range()` function.
@@ -992,8 +1045,22 @@ list(range(9,2,-1))
 ```
 <!-- #endsolution -->
 
+**3)** Write a program that prints your name 100 times
+
+<!-- #solution -->
+```python
+```
+<!-- #endsolution -->
+
+**4)** Write a program that prints a multiplication table for numbers 1 through 10
+
+<!-- #solution -->
+```python
+```
+<!-- #endsolution -->
+
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-# <ins>4.</ins> Conditional and control flow statements
+# <ins>5.</ins> Conditional and control flow statements
 <!-- #endregion -->
 
 ## _If_-statements
@@ -1165,76 +1232,9 @@ while i<=items:
 ```
 <!-- #endsolution -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
-# <ins>5.</ins> Functions
-<!-- #endregion -->
-
-<!-- #region editable=true slideshow={"slide_type": ""} -->
-A function is a block of reusable code that performs a specific task. Functions help reduce repetition and make code easier to manage. A function is defined using the `def` keyword.
-<!-- #endregion -->
-
-* You can pass data to functions (parameters).
-* Functions can return values.
-* Functions help break down complex programs into smaller, manageable parts.
-
-```python
-# Function to add two numbers
-def add_numbers(a, b):
-    return a + b
-
-# Call the function
-result = add_numbers(3, 4)
-print(result)
-```
-
-<!-- #region editable=true slideshow={"slide_type": "slide"} -->
-## Have a Play!
-<!-- #endregion -->
-
-### _Exercises_
-
-
-**1)** Write a program that prints your name 100 times
+**4) Functions**: Write a program to calculate the factorial of a number
 
 <!-- #solution -->
 ```python
-```
-<!-- #endsolution -->
-
-**2)** Write a program that prints a multiplication table for numbers 1 through 10
-
-<!-- #solution -->
-```python
-```
-<!-- #endsolution -->
-
-**3)** Write a function that converts Celsius to Fahrenheit
-
-<!-- #solution -->
-```python
-```
-<!-- #endsolution -->
-
-**4)** Write a program to calculate the factorial of a number
-
-<!-- #solution -->
-```python
-```
-<!-- #endsolution -->
-
-**5)** Ask the user to enter a temperature in Celsius. The program should print a message based on the temperature:
-
-* If the temperature is less than -273.15, print that the temperature is invalid because it is below absolute zero.
-* If it is exactly -273.15, print that the temperature is absolute 0.
-* If the temperature is between -273.15 and 0, print that the temperature is below freezing.
-* If it is 0, print that the temperature is at the freezing point.
-* If it is between 0 and 100, print that the temperature is in the normal range.
-* If it is 100, print that the temperature is at the boiling point.
-* If it is above 100, print that the temperature is above the boiling point.
-
-<!-- #solution -->
-```python
-# Get the temperature from the user as a float
-# Check the conditions and print the corresponding message
 ```
 <!-- #endsolution -->
