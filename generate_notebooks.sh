@@ -10,6 +10,7 @@ if [ ! -d "common" ]; then
 fi
 
 # Make sure it's up-to-date
+echo "Updating common submodule..."
 git submodule update --init --recursive
 
 # Execute "filter_md.py" which reads the Markdown file with solutions and produces the Markdown file without solutions
