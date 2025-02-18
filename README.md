@@ -61,4 +61,4 @@ To get started with teaching the course, follow these steps:
 
 If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request. Contributions are welcome!
 
-If you're a co-developer of our training course, please read the workflow we suggest on this [contribution page](development.md).
+If you're a co-developer of our training course, please read the workflow we suggest in our [Developer's Guide](development.md).
