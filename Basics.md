@@ -6,6 +6,10 @@ jupyter:
       format_name: markdown
       format_version: '1.3'
       jupytext_version: 1.16.6
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -48,7 +52,6 @@ execute it with `python pull_files_from_repo.py`
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "skip"} -->
-# <ins>Table of Contents</ins>
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -69,6 +72,12 @@ By the end of this course you should know:
  - where to find further resources to practice your Python programming.
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "skip"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Useful resources
 <!-- #endregion -->
@@ -81,6 +90,12 @@ By the end of this course you should know:
  - [Software Carpentry - Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/index.html)
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "fragment"} -->
  - The top results are often filled with SEO sites
  - The aim is not to provide a concise explanation, but to show you as many ads as possible
@@ -89,6 +104,9 @@ By the end of this course you should know:
  Example: "python how do I invert a list"
 
  Recommend: w3schools, python.org (which is often more technical)
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -116,6 +134,12 @@ By the end of this course you should know:
 2. Translate into low-level (machine/assembly) language.
 3. Execute the program.
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Running code in an interpreted language (such as Python)
 <!-- #endregion -->
@@ -123,6 +147,12 @@ By the end of this course you should know:
 <!-- #region slideshow={"slide_type": ""} -->
 1. Write your code in high-level programming language.
 2. Interpret code and execute directly
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -149,12 +179,9 @@ Jupyter works with cells such as these, which you execute with the play button o
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Add just a one to the cell and execute
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": ""} -->
@@ -167,6 +194,12 @@ You can add cells with the plus. You can also change the type
 ##### Now it is markdown and the `#` indicates a header (or `##`, etc., up to 6 times, with smaller font sizes)
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 # <ins>**Part I**</ins>
 <!-- #endregion -->
@@ -176,9 +209,6 @@ You can add cells with the plus. You can also change the type
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "notes"} -->
-In this section we will look into the very basics of programming, to give you the foundations
-to start from. A lot of it will be transferrable to other programming languages,
-even if the exact syntax, the way how you write things down, changes.
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -193,6 +223,12 @@ As any programming language, Python can deal with many different data types. Amo
 - Booleans: True, False
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Variables
 Values are stored in _variables_, which are of data types listed above or more complex ones.
@@ -204,36 +240,39 @@ by the name x
 - Syntax: name = value”
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Print type of a variable
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # print statement "Hello"
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # put the content of the print statement in a variable
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # check the type of that variable
-
 ```
-
 <!-- #endsolution -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Try to assign the data types at the following qr code
@@ -243,116 +282,107 @@ Try not to overthink. If something is ambiguous pick what fits best
 
 ![QRCode](images/qr_question1.png)
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Add integers
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Adding two integers (2 and 5)
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Adding integers to a string ("2+5 = ") naively
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Solution: call the result into a string
-
 ```
-
 <!-- #endsolution -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Boolean type
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # boolean have to be capitalized
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Checking the type of a boolean
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Adding a boolean to an integer
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Checking the type of the result
-
 ```
-
 <!-- #endsolution -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Boolean operators
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Adding booleans
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Logical AND
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Logical OR
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Negating boolean
-
 ```
-
 <!-- #endsolution -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Basic operators
@@ -371,6 +401,12 @@ New values can be obtained by applying operators to old values, for example, mat
     5. Left-to-right (except exponentiation!)
 
 So, use parenthesis to make sure!
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -394,6 +430,12 @@ my_number = my_other_number / 2 # I have to divide
 print(my_number)
 ```
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Debugging and Types of Errors
 <!-- #endregion -->
@@ -405,6 +447,15 @@ print(my_number)
     - Syntax errors - written the code wrongly
     - Semantic errors - written the wrong code
     - Runtime errors - something's wrong with the code (during execution)
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -423,17 +474,20 @@ You could try
  - ...
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 #### _Example solution_
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # What happens if you add a float and an integer?
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -441,25 +495,26 @@ You could try
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # What happens if you mix numbers and bools in arithmetic expressions?
-
 ```
-
 <!-- #endsolution -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "fragment"} -->
+True is converted to one and False is converted to zero
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 #### _Example solution_
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # How setting parenthesis changes the result of a large arithmetic expression?
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -467,12 +522,9 @@ You could try
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Print statements that include variables of different data types.
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -486,11 +538,8 @@ Try to reproduce each of the error types
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": ""} -->
@@ -498,11 +547,8 @@ Try to reproduce each of the error types
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": ""} -->
@@ -510,11 +556,8 @@ Try to reproduce each of the error types
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -527,6 +570,12 @@ some_functionality_on_block:
 statement_not_in_block()
 ```
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -565,11 +614,8 @@ $
 
 <!-- #solution -->
 <!-- #endregion -->
-
 ```python
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -581,11 +627,6 @@ $
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "notes"} -->
-Now that we have covered the basics, let's move on to the next level. I expect that most of you are interested in processing data in one way or the other. Most times, we do not want to explicitly write our data into our code, which is also called "hardcoding", and has a bad reputation.
-
-Instead, we want to be able to provide data during runtime, and have a general program that is able to process the data.
-
-How then do we get the data in and out of our program?
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -595,17 +636,24 @@ The `print` function enables a Python program to display textual information to 
 
 ```python slideshow={"slide_type": ""}
 # Get some user input
-
+x = input()
 # print it
-
+print(x)
 # check the type of the input
-
+type(x)   # This will be a string if you don't convert it
 ```
 
 ```python slideshow={"slide_type": ""}
 # Implement a greeting function with user input
-
+name = input("What's you name?")
+print("Hello " + name)
 ```
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Reading and writing files
@@ -626,6 +674,12 @@ Two things to note here:
      - read+write: `'w+'` or `'r+'`
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Writing files and formatting strings (C-style)
 <!-- #endregion -->
@@ -641,6 +695,12 @@ with open("testfile.txt", "w") as my_file:
 
 <!-- #region slideshow={"slide_type": ""} -->
 see also [https://www.learnpython.org/en/String\_Formatting](https://www.learnpython.org/en/String_Formatting)
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -660,6 +720,12 @@ with open("testfile.txt", "a") as my_file:
 see also [f-strings](https://realpython.com/python-f-strings/)
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Reading files
 <!-- #endregion -->
@@ -674,6 +740,12 @@ with open("testfile.txt", "r") as my_file:
     #print(my_file.readline())
     #print(my_file.readlines())
 ```
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Have a play!
@@ -716,94 +788,76 @@ _Lists_ are ordered collections of items.
 
 <!-- #solution -->
 <!-- #endregion -->
-
 ```python
 # Creating/Initialising a list
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Print a list
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Print an element of the list. Note: use [] not () for item indexing
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Print the first element of the list. Indexing starts with 0!
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Print the last element of the list using backward indexing
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Print an internal slice of the list
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
 # Print a slice of the list from the beginning
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python
 # Different datatypes in lists, length of lists
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python
 # Print out `list1`, a slice containing the last element
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #solution -->
-
 ```python
 # Concatenate two lists
-
 ```
-
 <!-- #endsolution -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _Range()_ function
@@ -856,11 +910,8 @@ list(range(9,2,-1))
 **1) Lists**: Create a list of numbers from 1 to 20 and then print the elements at every second index.
 
 <!-- #solution -->
-
 ```python
-
 ```
-
 <!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": ""} -->
@@ -868,179 +919,62 @@ list(range(9,2,-1))
 <!-- #endregion -->
 
 <!-- #solution -->
-
 ```python slideshow={"slide_type": ""}
-
 ```
-
-<!-- #endsolution -->
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 # <ins>5.</ins> Conditional and control flow statements
 <!-- #endregion -->
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _If_-statements
 <!-- #endregion -->
-
-An `if`-statement evaluates a condition (an expression that returns `True` or `False`) and executes a block of code if the condition is true. Python uses conditional operators, colons `:` and indentation to define blocks of code. The `elif` (else if) statement allows checking multiple conditions sequentially. Once a condition evaluates to `True`, the rest are ignored. If no conditions are true, you can use an `else` statement as a fallback.
-
 <!-- #region slideshow={"slide_type": "fragment"} -->
-Examples of conditional operators (expressions and their descriptions):
-
-* `if x>3:` .. if `x` is greater than 3
-* `if x>=3:` .. if `x` is greater than or equal to 3
-* `if x==3:` .. if `x` is 3
-* `if x!=3:` .. if `x` is not 3
-
-Common mistakes (incorrect --> correct):
-
-* `if x=1:` --> `if x==1:`
-* `if x>1 or x<100:` --> `if x>1 and x<100:`
-* `if grade>=80 and <90:` --> `if grade>=80 and grade<90:`
 <!-- #endregion -->
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Examples:</ins>_
 <!-- #endregion -->
-
 ```python
-x = 10
-if x > 5:
-    print("x is greater than 5")
 ```
-
 ```python
-grade = int(input('Enter your score: '))
 ```
-
 ```python
 # using only `if`
-if grade >= 90:
-    print('A')
-if grade >= 80 and grade <90:
-    print('B')
-if grade >= 70 and grade <80:
-    print('C')
-if grade >= 60 and grade <70:
-    print('D')
-if grade < 60:
-    print('F')
 ```
-
 ```python
 # using `if`, `elif` and `else`
-if grade >= 90:
-    print('A')
-elif grade >= 80:
-    print('B')
-elif grade >= 70:
-    print('C')
-elif grade >= 60:
-    print('D')
-else:
-    print('F')
 ```
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _For_-loops
 <!-- #endregion -->
-
-A `for`-loop iterates over a sequence (like a list, string, or range) and executes a block of code for each item in that sequence.
-
-
-* A `for`-loop is a _control_ instruction used for iteration and repetition
-* **iteration** .. perform _same operation_ on _different items_, one item at a time
-* **repetition** .. perform an operation _more than once_
-* Keywords: `for`, `in`
-* `i` .. _loop control variable_ or _iteration variable_
-The colon `:` indicates where the _body_ of a `for`-loop begins (with _indentation_)
-* `range()` function creates a list of integers
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Examples:</ins>_
 <!-- #endregion -->
-
 ```python
 # Iterating over a list
-for item in [1, 2, 3]:
-    print(item)
-
 # Using range to loop through numbers
-for i in range(5):
-    print(i)
 ```
-
 ```python
-my_list = ["Andrew", "John", "Kate"]
-for i in my_list:
-  print(i)
-for item in my_list:
-  print(item)
-print("All items are printed")
-for i in range(3):
-  print("item", i) 
-for i in range(1,4):
-  print("item", i)
-for i in range(2,15,3):
-  print("item", i) 
 ```
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _While_-loops
 <!-- #endregion -->
-
-A `while`-loop keeps executing a block of code as long as its condition remains true. It's commonly used for indefinite loops where the number of iterations isn’t known beforehand.
-
-
-* A `while`-loop is a _control_ instruction ideal for _indefinite loops_ when we don’t know when it ends
-* Keywords: `while`
-* `n=1` .. initialisation
-* `n<=10` .. check a condition
-* `n+=1` .. update
-* Again, the colon `:` indicates where the _body_ of a `while`-loop begins (with _indentation_)
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Examples:</ins>_
 <!-- #endregion -->
-
 ```python
-count = 0
-while count < 5:
-    print("Count:", count)
-    count += 1
 ```
-
 ```python
-n=1
-while n<=10:
-  print(n)
-  n+=1
-items = 15
-i = 2
-while i<=items:
-  print("item", i)
-  i+=3
 ```
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Have a Play!
 <!-- #endregion -->
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _Exercises_
 <!-- #endregion -->
-
 <!-- #region slideshow={"slide_type": "slide"} -->
-**1) `If`-statements**: Write a program that asks for a user's age and prints whether the person is a minor, an adult, or a senior citizen.
 <!-- #endregion -->
-
 <!-- #solution -->
-
 ```python
-
 ```
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 <!-- #endsolution -->
 
@@ -1048,11 +982,8 @@ while i<=items:
 
 <!-- #solution -->
 <!-- #endregion -->
-
 ```python
-
 ```
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 <!-- #endsolution -->
 
@@ -1060,11 +991,8 @@ while i<=items:
 
 <!-- #solution -->
 <!-- #endregion -->
-
 ```python
-
 ```
-
 <!-- #region slideshow={"slide_type": "slide"} -->
 <!-- #endsolution -->
 
@@ -1072,9 +1000,6 @@ while i<=items:
 
 <!-- #solution -->
 <!-- #endregion -->
-
 ```python
-
 ```
-
 <!-- #endsolution -->
