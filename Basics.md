@@ -51,8 +51,6 @@ copy the `pull_files_from_repo.py` file into your environment
 execute it with `python pull_files_from_repo.py`
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "skip"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 # <ins>0.</ins> Introduction
@@ -72,11 +70,7 @@ By the end of this course you should know:
  - where to find further resources to practice your Python programming.
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "skip"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Useful resources
@@ -90,11 +84,7 @@ By the end of this course you should know:
  - [Software Carpentry - Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/index.html)
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "fragment"} -->
  - The top results are often filled with SEO sites
@@ -106,8 +96,6 @@ By the end of this course you should know:
  Recommend: w3schools, python.org (which is often more technical)
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Programming crash course
@@ -134,11 +122,7 @@ By the end of this course you should know:
 2. Translate into low-level (machine/assembly) language.
 3. Execute the program.
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Running code in an interpreted language (such as Python)
@@ -149,11 +133,7 @@ By the end of this course you should know:
 2. Interpret code and execute directly
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Python can be executed in different ways
@@ -194,11 +174,7 @@ You can add cells with the plus. You can also change the type
 ##### Now it is markdown and the `#` indicates a header (or `##`, etc., up to 6 times, with smaller font sizes)
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 # <ins>**Part I**</ins>
@@ -208,8 +184,6 @@ You can add cells with the plus. You can also change the type
 # <ins>1.</ins> Basics
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Basic data types
@@ -223,11 +197,7 @@ As any programming language, Python can deal with many different data types. Amo
 - Booleans: True, False
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Variables
@@ -240,11 +210,7 @@ by the name x
 - Syntax: name = value”
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Print type of a variable
@@ -268,11 +234,7 @@ by the name x
 ```
 <!-- #endsolution -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Try to assign the data types at the following qr code
@@ -282,11 +244,7 @@ Try not to overthink. If something is ambiguous pick what fits best
 
 ![QRCode](images/qr_question1.png)
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Add integers
@@ -310,11 +268,7 @@ Try not to overthink. If something is ambiguous pick what fits best
 ```
 <!-- #endsolution -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Boolean type
@@ -344,11 +298,7 @@ Try not to overthink. If something is ambiguous pick what fits best
 ```
 <!-- #endsolution -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Example</ins>:_ Boolean operators
@@ -378,11 +328,7 @@ Try not to overthink. If something is ambiguous pick what fits best
 ```
 <!-- #endsolution -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Basic operators
@@ -403,11 +349,7 @@ New values can be obtained by applying operators to old values, for example, mat
 So, use parenthesis to make sure!
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Comments (and documentation)
@@ -430,11 +372,7 @@ my_number = my_other_number / 2 # I have to divide
 print(my_number)
 ```
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Debugging and Types of Errors
@@ -449,14 +387,8 @@ print(my_number)
     - Runtime errors - something's wrong with the code (during execution)
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Have a play!
@@ -474,11 +406,7 @@ You could try
  - ...
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 #### _Example solution_
@@ -500,8 +428,6 @@ You could try
 ```
 <!-- #endsolution -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "fragment"} -->
 True is converted to one and False is converted to zero
@@ -572,11 +498,7 @@ statement_not_in_block()
 
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 # <ins>2.</ins> Functions
@@ -626,8 +548,6 @@ $
 # <ins>3.</ins> Getting Data in and out
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## User input
@@ -649,11 +569,7 @@ name = input("What's you name?")
 print("Hello " + name)
 ```
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Reading and writing files
@@ -674,11 +590,7 @@ Two things to note here:
      - read+write: `'w+'` or `'r+'`
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Writing files and formatting strings (C-style)
@@ -697,11 +609,7 @@ with open("testfile.txt", "w") as my_file:
 see also [https://www.learnpython.org/en/String\_Formatting](https://www.learnpython.org/en/String_Formatting)
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Writing files (f-strings)
@@ -720,11 +628,7 @@ with open("testfile.txt", "a") as my_file:
 see also [f-strings](https://realpython.com/python-f-strings/)
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Reading files
@@ -741,11 +645,7 @@ with open("testfile.txt", "r") as my_file:
     #print(my_file.readlines())
 ```
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Have a play!
@@ -847,17 +747,9 @@ _Lists_ are ordered collections of items.
 ```
 <!-- #endsolution -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "notes"} -->
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _Range()_ function
