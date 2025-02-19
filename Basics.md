@@ -86,15 +86,6 @@ By the end of this course you should know:
 
 
 
-<!-- #region slideshow={"slide_type": "fragment"} -->
- - The top results are often filled with SEO sites
- - The aim is not to provide a concise explanation, but to show you as many ads as possible
- - Very verbose, lots of unneccesary alternatives.
-
- Example: "python how do I invert a list"
-
- Recommend: w3schools, python.org (which is often more technical)
-<!-- #endregion -->
 
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -145,10 +136,6 @@ By the end of this course you should know:
 2. run python `myname.py`
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": "fragment"} -->
-#### interactive or ipython session:
- - Start with typing `python` or better `ipython`
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### Demonstration of using _Jupyter_ notebook
@@ -429,9 +416,6 @@ You could try
 <!-- #endsolution -->
 
 
-<!-- #region slideshow={"slide_type": "fragment"} -->
-True is converted to one and False is converted to zero
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 #### _Example solution_
@@ -818,8 +802,6 @@ list(range(9,2,-1))
 <!-- #endregion -->
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _If_-statements
-<!-- #endregion -->
-<!-- #region slideshow={"slide_type": "fragment"} -->
 <!-- #endregion -->
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Examples:</ins>_
