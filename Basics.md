@@ -488,7 +488,11 @@ statement_not_in_block()
 # <ins>2.</ins> Functions
 <!-- #endregion -->
 
-<!-- #region slideshow={"slide_type": ""} -->
+<!-- #region slideshow={"slide_type": "slide"} -->
+![Functions diagram showing general form and example](images/functions.png)
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 A function is a block of reusable code that performs a specific task. Functions help reduce repetition and make code easier to manage. A function is defined using the `def` keyword.
 <!-- #endregion -->
 
