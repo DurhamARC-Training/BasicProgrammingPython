@@ -529,127 +529,7 @@ $
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-# <ins>3.</ins> Getting Data in and out
-<!-- #endregion -->
-
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-## User input
-The `print` function enables a Python program to display textual information to the user. The `input` function maybe used to obtain information from the user.
-<!-- #endregion -->
-
-```python slideshow={"slide_type": ""}
-# Get some user input
-x = input()
-# print it
-print(x)
-# check the type of the input
-type(x)   # This will be a string if you don't convert it
-```
-
-```python slideshow={"slide_type": ""}
-# Implement a greeting function with user input
-name = input("What's you name?")
-print("Hello " + name)
-```
-
-
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-## Reading and writing files
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": ""} -->
-```python
-# Create a file object
-with open("testfile.txt", 'w') as my_file:
-    ...
-```
-Two things to note here:
- - My object `my_file` is different from my file `"testfile"`!
- - There are different modes:
-     - read: `'r'`
-     - (over-)write: `'w'`
-     - append: `'a'`
-     - read+write: `'w+'` or `'r+'`
-<!-- #endregion -->
-
-
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-### Writing files and formatting strings (C-style)
-<!-- #endregion -->
-
-```python slideshow={"slide_type": ""}
-with open("testfile.txt", "w") as my_file:
-    # Write - note special characters!
-    my_file.write("This is some text. \n And some more.")
-    my_file.write("\n\nI can also add numbers like this: %d %d \n" %(22, 333))
-
-    my_file.write(str(222))
-```
-
-<!-- #region slideshow={"slide_type": ""} -->
-see also [https://www.learnpython.org/en/String\_Formatting](https://www.learnpython.org/en/String_Formatting)
-<!-- #endregion -->
-
-
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-### Writing files (f-strings)
-<!-- #endregion -->
-
-```python slideshow={"slide_type": ""}
-number1 = 44
-number2 = 111
-
-with open("testfile.txt", "a") as my_file:
-    # Append to the opened file
-    my_file.write(f"\n I have opened the same file again.\n More numbers: {number1} {number2}.")
-```
-
-<!-- #region slideshow={"slide_type": ""} -->
-see also [f-strings](https://realpython.com/python-f-strings/)
-<!-- #endregion -->
-
-
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-### Reading files
-<!-- #endregion -->
-
-```python slideshow={"slide_type": ""}
-with open("testfile.txt", "r") as my_file:
-    # Read it and print it to screen
-    print(my_file.read())
-
-    # Try this:
-    #print(my_file.read(7))
-    #print(my_file.readline())
-    #print(my_file.readlines())
-```
-
-
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-## Have a play!
-<!-- #endregion -->
-
-### _Exercises_
-
-<!-- #region slideshow={"slide_type": ""} -->
-Here are some exercise ideas for "Getting data in and out":
-- Prompt the user for a filename and write a short text into it.
-- Read it back and print the lines to the screen.
-- Experiment with different modes: 'r', 'w', 'a' to see how the file content changes.
-<!-- #endregion -->
-
-```python
-
-```
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-# <ins>4.</ins> Data structures
+# <ins>3.</ins> Data structures
 <!-- #endregion -->
 
 Python can work not only with basic data types mentioned before, but also with compound ones. Compound data types in Python are a powerful tool for organizing and storing data. Among the most commonly used are _lists_ and _dictionaries_. `For`-loops described in the next section often iterate over elements of lists or pairs of keys and values in dictionaries. But they can also iterate over a series of numbers generated for indexing or calculations by the `range()` function.
@@ -798,7 +678,7 @@ list(range(9,2,-1))
 ```python slideshow={"slide_type": ""}
 ```
 <!-- #region slideshow={"slide_type": "slide"} -->
-# <ins>5.</ins> Conditional and control flow statements
+# <ins>4.</ins> Conditional and control flow statements
 <!-- #endregion -->
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _If_-statements
@@ -877,3 +757,123 @@ list(range(9,2,-1))
 ```python
 ```
 <!-- #endsolution -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+# <ins>5.</ins> Getting Data in and out
+<!-- #endregion -->
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## User input
+The `print` function enables a Python program to display textual information to the user. The `input` function maybe used to obtain information from the user.
+<!-- #endregion -->
+
+```python slideshow={"slide_type": ""}
+# Get some user input
+x = input()
+# print it
+print(x)
+# check the type of the input
+type(x)   # This will be a string if you don't convert it
+```
+
+```python slideshow={"slide_type": ""}
+# Implement a greeting function with user input
+name = input("What's you name?")
+print("Hello " + name)
+```
+
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Reading and writing files
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": ""} -->
+```python
+# Create a file object
+with open("testfile.txt", 'w') as my_file:
+    ...
+```
+Two things to note here:
+ - My object `my_file` is different from my file `"testfile"`!
+ - There are different modes:
+     - read: `'r'`
+     - (over-)write: `'w'`
+     - append: `'a'`
+     - read+write: `'w+'` or `'r+'`
+<!-- #endregion -->
+
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+### Writing files and formatting strings (C-style)
+<!-- #endregion -->
+
+```python slideshow={"slide_type": ""}
+with open("testfile.txt", "w") as my_file:
+    # Write - note special characters!
+    my_file.write("This is some text. \n And some more.")
+    my_file.write("\n\nI can also add numbers like this: %d %d \n" %(22, 333))
+
+    my_file.write(str(222))
+```
+
+<!-- #region slideshow={"slide_type": ""} -->
+see also [https://www.learnpython.org/en/String\_Formatting](https://www.learnpython.org/en/String_Formatting)
+<!-- #endregion -->
+
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+### Writing files (f-strings)
+<!-- #endregion -->
+
+```python slideshow={"slide_type": ""}
+number1 = 44
+number2 = 111
+
+with open("testfile.txt", "a") as my_file:
+    # Append to the opened file
+    my_file.write(f"\n I have opened the same file again.\n More numbers: {number1} {number2}.")
+```
+
+<!-- #region slideshow={"slide_type": ""} -->
+see also [f-strings](https://realpython.com/python-f-strings/)
+<!-- #endregion -->
+
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+### Reading files
+<!-- #endregion -->
+
+```python slideshow={"slide_type": ""}
+with open("testfile.txt", "r") as my_file:
+    # Read it and print it to screen
+    print(my_file.read())
+
+    # Try this:
+    #print(my_file.read(7))
+    #print(my_file.readline())
+    #print(my_file.readlines())
+```
+
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Have a play!
+<!-- #endregion -->
+
+### _Exercises_
+
+<!-- #region slideshow={"slide_type": ""} -->
+Here are some exercise ideas for "Getting data in and out":
+- Prompt the user for a filename and write a short text into it.
+- Read it back and print the lines to the screen.
+- Experiment with different modes: 'r', 'w', 'a' to see how the file content changes.
+<!-- #endregion -->
+
+```python
+
+```
