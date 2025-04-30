@@ -1005,15 +1005,23 @@ even_numbers = list(range(10, 31, 2))
 print(even_numbers)
 ```
 
+<!-- #endsolution -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 # <ins>4.</ins> Conditional and control flow statements
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## _If_-statements
+## _If/Else_-statements
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "slide"} -->
+![Slide showing general form and example for if/else statement](images/conditional-flow.png)
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 An `if`-statement evaluates a condition (an expression that returns `True` or `False`) and executes a block of code if the condition is true. Python uses conditional operators, colons `:` and indentation to define blocks of code. The `elif` (else if) statement allows checking multiple conditions sequentially. Once a condition evaluates to `True`, the rest are ignored. If no conditions are true, you can use an `else` statement as a fallback.
+<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "fragment"} -->
 Examples of conditional operators (expressions and their descriptions):

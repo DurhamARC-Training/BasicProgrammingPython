@@ -681,55 +681,160 @@ list(range(9,2,-1))
 <!-- #solution -->
 ```python slideshow={"slide_type": ""}
 ```
+<!-- #endsolution -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 # <ins>4.</ins> Conditional and control flow statements
 <!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
-## _If_-statements
+## _If/Else_-statements
 <!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+![Slide showing general form and example for if/else statement](images/conditional-flow.png)
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+An `if`-statement evaluates a condition (an expression that returns `True` or `False`) and executes a block of code if the condition is true. Python uses conditional operators, colons `:` and indentation to define blocks of code. The `elif` (else if) statement allows checking multiple conditions sequentially. Once a condition evaluates to `True`, the rest are ignored. If no conditions are true, you can use an `else` statement as a fallback.
+<!-- #endregion -->
+
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Examples:</ins>_
 <!-- #endregion -->
+
 ```python
+x = 10
+if x > 5:
+    print("x is greater than 5")
 ```
+
 ```python
+grade = int(input('Enter your score: '))
 ```
+
 ```python
 # using only `if`
+if grade >= 90:
+    print('A')
+if grade >= 80 and grade <90:
+    print('B')
+if grade >= 70 and grade <80:
+    print('C')
+if grade >= 60 and grade <70:
+    print('D')
+if grade < 60:
+    print('F')
 ```
+
 ```python
 # using `if`, `elif` and `else`
+if grade >= 90:
+    print('A')
+elif grade >= 80:
+    print('B')
+elif grade >= 70:
+    print('C')
+elif grade >= 60:
+    print('D')
+else:
+    print('F')
 ```
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _For_-loops
 <!-- #endregion -->
+
+A `for`-loop iterates over a sequence (like a list, string, or range) and executes a block of code for each item in that sequence.
+
+
+* A `for`-loop is a _control_ instruction used for iteration and repetition
+* **iteration** .. perform _same operation_ on _different items_, one item at a time
+* **repetition** .. perform an operation _more than once_
+* Keywords: `for`, `in`
+* `i` .. _loop control variable_ or _iteration variable_
+The colon `:` indicates where the _body_ of a `for`-loop begins (with _indentation_)
+* `range()` function creates a list of integers
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Examples:</ins>_
 <!-- #endregion -->
+
 ```python
 # Iterating over a list
+for item in [1, 2, 3]:
+    print(item)
+
 # Using range to loop through numbers
+for i in range(5):
+    print(i)
 ```
+
 ```python
+my_list = ["Andrew", "John", "Kate"]
+for i in my_list:
+  print(i)
+for item in my_list:
+  print(item)
+print("All items are printed")
+for i in range(3):
+  print("item", i) 
+for i in range(1,4):
+  print("item", i)
+for i in range(2,15,3):
+  print("item", i) 
 ```
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## _While_-loops
 <!-- #endregion -->
+
+A `while`-loop keeps executing a block of code as long as its condition remains true. It's commonly used for indefinite loops where the number of iterations isn’t known beforehand.
+
+
+* A `while`-loop is a _control_ instruction ideal for _indefinite loops_ when we don’t know when it ends
+* Keywords: `while`
+* `n=1` .. initialisation
+* `n<=10` .. check a condition
+* `n+=1` .. update
+* Again, the colon `:` indicates where the _body_ of a `while`-loop begins (with _indentation_)
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Examples:</ins>_
 <!-- #endregion -->
+
 ```python
+count = 0
+while count < 5:
+    print("Count:", count)
+    count += 1
 ```
+
 ```python
+n=1
+while n<=10:
+  print(n)
+  n+=1
+items = 15
+i = 2
+while i<=items:
+  print("item", i)
+  i+=3
 ```
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Have a Play!
 <!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _Exercises_
 <!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
+**1) `If`-statements**: Write a program that asks for a user's age and prints whether the person is a minor, an adult, or a senior citizen.
 <!-- #endregion -->
+
 <!-- #solution -->
 ```python
 ```
