@@ -794,186 +794,7 @@ print(f"{celsius}°C is equal to {celsius_to_fahrenheit(celsius)}°F")
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-# <ins>3.</ins> Getting Data in and out
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-Now that we have covered the basics, let's move on to the next level. I expect that most of you are interested in processing data in one way or the other. Most times, we do not want to explicitly write our data into our code, which is also called "hardcoding", and has a bad reputation.
-
-Instead, we want to be able to provide data during runtime, and have a general program that is able to process the data.
-
-How then do we get the data in and out of our program?
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-## User input
-The `print` function enables a Python program to display textual information to the user. The `input` function maybe used to obtain information from the user.
-<!-- #endregion -->
-
-```python slideshow={"slide_type": ""}
-# Get some user input
-x = input()
-# print it
-print(x)
-# check the type of the input
-type(x)   # This will be a string if you don't convert it
-```
-
-```python slideshow={"slide_type": ""}
-# Implement a greeting function with user input
-name = input("What's you name?")
-print("Hello " + name)
-```
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-##### _<ins>Notes:</ins>_
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-As an equivalent to the `print` built-in function, there is the `input` built-in function. It just takes the input from the command line or terminal, and you can do with it whatever you like. For example, here I am putting it into a variable `x`, and then output it. You can also add a prompting message to the user to tell them what kind of input you expect. Note that, just as `print` outputs a string, any user input will be interpreted as of type `str`, regardless of whether it is made out of letters, numbers, or symbols. So you might need to convert it to whatever data type you need it to be.
-
-This kind of user input is, of course, not suited for inputting large data sets. It is rather for getting in, for example, parameters, the path to the data set, or other settings or instructions to the program.
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-## Reading and writing files
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": ""} -->
-```python
-# Create a file object
-with open("testfile.txt", 'w') as my_file:
-    ...
-```
-Two things to note here:
- - My object `my_file` is different from my file `"testfile"`!
- - There are different modes:
-     - read: `'r'`
-     - (over-)write: `'w'`
-     - append: `'a'`
-     - read+write: `'w+'` or `'r+'`
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-##### _<ins>Notes:</ins>_
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-The actual data input will usually happen over a file. Follow me in creating a new file.
-
-[demonstrate] As you will see, there is now a new file called `"testfile.txt"` in your working directory.
-
-[show] But that is not the only thing that happened. At the same time, a file object called `my_file` was created in your program. These are two different things. For example, if I rename or delete the file object, my file in the file system won't change. This might sound trivial, but I thought I mention it, as it could lead to confusion.
-
-The `'w'` here stands for "_write_". If there is already a file with this name, we will now overwrite its contents. If we instead open the file with `'a'` for "_append_", we start writing after the existing content. We can also open the file in _read-only_ mode, or in _read-and-write_ mode.
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-### Writing files and formatting strings (C-style)
-<!-- #endregion -->
-
-```python slideshow={"slide_type": ""}
-with open("testfile.txt", "w") as my_file:
-    # Write - note special characters!
-    my_file.write("This is some text. \n And some more.")
-    my_file.write("\n\nI can also add numbers like this: %d %d \n" %(22, 333))
-
-    my_file.write(str(222))
-```
-
-<!-- #region slideshow={"slide_type": ""} -->
-see also [https://www.learnpython.org/en/String\_Formatting](https://www.learnpython.org/en/String_Formatting)
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-##### _<ins>Notes:</ins>_
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-Now we are writing some text and numbers into our file. Note that, again, everything needs to be a _string_. We can put in numbers either by converting them directly to a string, or by putting in a place holder, like this "_percent d_", for numerical or decimal values, and then putting in the number after the string. The "_backslash n_" symbol stands for a line break.
-
-The single backslash is a line continuation character and tells the interpreter that we are not done yet with that command, but that it continues in the next line.
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-### Writing files (f-strings)
-<!-- #endregion -->
-
-```python slideshow={"slide_type": ""}
-number1 = 44
-number2 = 111
-
-with open("testfile.txt", "a") as my_file:
-    # Append to the opened file
-    my_file.write(f"\n I have opened the same file again.\n More numbers: {number1} {number2}.")
-```
-
-<!-- #region slideshow={"slide_type": ""} -->
-see also [f-strings](https://realpython.com/python-f-strings/)
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-##### _<ins>Notes:</ins>_
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-This similar as on the previous slide. We open the same file in _append_-mode and add some more lines, using _f-strings_ instead of _C-style_ string formatting for including numbers.
-
-_F-strings_ are faster.
-
-Try for yourself to write something into the file using either or both styles, and then check the content of your file! We will use this file in a moment to read the content back into a Python program.
-
-[give them some minutes to do that]
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-### Reading files
-<!-- #endregion -->
-
-```python slideshow={"slide_type": ""}
-with open("testfile.txt", "r") as my_file:
-    # Read it and print it to screen
-    print(my_file.read())
-
-    # Try this:
-    #print(my_file.read(7))
-    #print(my_file.readline())
-    #print(my_file.readlines())
-```
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-##### _<ins>Notes:</ins>_
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "notes"} -->
-In the next step, we will read out data from the file that we have just created. There are different ways of doing this. In this example, I combine the reading directly with a `print` statement, so that I see the result. Usually you would probably put the output of the reading operation into a `variable` and continue to process it.
-
-Have a go with these four different version of file reading. [give them some minutes]
-
-You have seen that you can read the whole file in one go, read single characters from the file, or a whole line. If you apply the `readline` command repeatedly, it will go on to the next line of your file.
-
-Interesting is the output of the `readlines` command. It gives you a structure that has all the lines of the file in it, as separate strings, divided by commas.
-<!-- #endregion -->
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-## Have a play!
-<!-- #endregion -->
-
-### _Exercises_
-
-<!-- #region slideshow={"slide_type": ""} -->
-Here are some exercise ideas for "Getting data in and out":
-- Prompt the user for a filename and write a short text into it.
-- Read it back and print the lines to the screen.
-- Experiment with different modes: 'r', 'w', 'a' to see how the file content changes.
-<!-- #endregion -->
-
-```python
-
-```
-
-<!-- #region slideshow={"slide_type": "slide"} -->
-# <ins>4.</ins> Data structures
+# <ins>3.</ins> Data structures
 <!-- #endregion -->
 
 Python can work not only with basic data types mentioned before, but also with compound ones. Compound data types in Python are a powerful tool for organizing and storing data. Among the most commonly used are _lists_ and _dictionaries_. `For`-loops described in the next section often iterate over elements of lists or pairs of keys and values in dictionaries. But they can also iterate over a series of numbers generated for indexing or calculations by the `range()` function.
@@ -1181,7 +1002,7 @@ print(even_numbers)
 ```
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-# <ins>5.</ins> Conditional and control flow statements
+# <ins>4.</ins> Conditional and control flow statements
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -1401,3 +1222,182 @@ print(f"The factorial of {number} is {factorial(number)}")
 ```
 
 <!-- #endsolution -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+# <ins>5.</ins> Getting Data in and out
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+Now that we have covered the basics, let's move on to the next level. I expect that most of you are interested in processing data in one way or the other. Most times, we do not want to explicitly write our data into our code, which is also called "hardcoding", and has a bad reputation.
+
+Instead, we want to be able to provide data during runtime, and have a general program that is able to process the data.
+
+How then do we get the data in and out of our program?
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## User input
+The `print` function enables a Python program to display textual information to the user. The `input` function maybe used to obtain information from the user.
+<!-- #endregion -->
+
+```python slideshow={"slide_type": ""}
+# Get some user input
+x = input()
+# print it
+print(x)
+# check the type of the input
+type(x)   # This will be a string if you don't convert it
+```
+
+```python slideshow={"slide_type": ""}
+# Implement a greeting function with user input
+name = input("What's you name?")
+print("Hello " + name)
+```
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+##### _<ins>Notes:</ins>_
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+As an equivalent to the `print` built-in function, there is the `input` built-in function. It just takes the input from the command line or terminal, and you can do with it whatever you like. For example, here I am putting it into a variable `x`, and then output it. You can also add a prompting message to the user to tell them what kind of input you expect. Note that, just as `print` outputs a string, any user input will be interpreted as of type `str`, regardless of whether it is made out of letters, numbers, or symbols. So you might need to convert it to whatever data type you need it to be.
+
+This kind of user input is, of course, not suited for inputting large data sets. It is rather for getting in, for example, parameters, the path to the data set, or other settings or instructions to the program.
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Reading and writing files
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": ""} -->
+```python
+# Create a file object
+with open("testfile.txt", 'w') as my_file:
+    ...
+```
+Two things to note here:
+ - My object `my_file` is different from my file `"testfile"`!
+ - There are different modes:
+     - read: `'r'`
+     - (over-)write: `'w'`
+     - append: `'a'`
+     - read+write: `'w+'` or `'r+'`
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+##### _<ins>Notes:</ins>_
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+The actual data input will usually happen over a file. Follow me in creating a new file.
+
+[demonstrate] As you will see, there is now a new file called `"testfile.txt"` in your working directory.
+
+[show] But that is not the only thing that happened. At the same time, a file object called `my_file` was created in your program. These are two different things. For example, if I rename or delete the file object, my file in the file system won't change. This might sound trivial, but I thought I mention it, as it could lead to confusion.
+
+The `'w'` here stands for "_write_". If there is already a file with this name, we will now overwrite its contents. If we instead open the file with `'a'` for "_append_", we start writing after the existing content. We can also open the file in _read-only_ mode, or in _read-and-write_ mode.
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+### Writing files and formatting strings (C-style)
+<!-- #endregion -->
+
+```python slideshow={"slide_type": ""}
+with open("testfile.txt", "w") as my_file:
+    # Write - note special characters!
+    my_file.write("This is some text. \n And some more.")
+    my_file.write("\n\nI can also add numbers like this: %d %d \n" %(22, 333))
+
+    my_file.write(str(222))
+```
+
+<!-- #region slideshow={"slide_type": ""} -->
+see also [https://www.learnpython.org/en/String\_Formatting](https://www.learnpython.org/en/String_Formatting)
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+##### _<ins>Notes:</ins>_
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+Now we are writing some text and numbers into our file. Note that, again, everything needs to be a _string_. We can put in numbers either by converting them directly to a string, or by putting in a place holder, like this "_percent d_", for numerical or decimal values, and then putting in the number after the string. The "_backslash n_" symbol stands for a line break.
+
+The single backslash is a line continuation character and tells the interpreter that we are not done yet with that command, but that it continues in the next line.
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+### Writing files (f-strings)
+<!-- #endregion -->
+
+```python slideshow={"slide_type": ""}
+number1 = 44
+number2 = 111
+
+with open("testfile.txt", "a") as my_file:
+    # Append to the opened file
+    my_file.write(f"\n I have opened the same file again.\n More numbers: {number1} {number2}.")
+```
+
+<!-- #region slideshow={"slide_type": ""} -->
+see also [f-strings](https://realpython.com/python-f-strings/)
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+##### _<ins>Notes:</ins>_
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+This similar as on the previous slide. We open the same file in _append_-mode and add some more lines, using _f-strings_ instead of _C-style_ string formatting for including numbers.
+
+_F-strings_ are faster.
+
+Try for yourself to write something into the file using either or both styles, and then check the content of your file! We will use this file in a moment to read the content back into a Python program.
+
+[give them some minutes to do that]
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+### Reading files
+<!-- #endregion -->
+
+```python slideshow={"slide_type": ""}
+with open("testfile.txt", "r") as my_file:
+    # Read it and print it to screen
+    print(my_file.read())
+
+    # Try this:
+    #print(my_file.read(7))
+    #print(my_file.readline())
+    #print(my_file.readlines())
+```
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+##### _<ins>Notes:</ins>_
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "notes"} -->
+In the next step, we will read out data from the file that we have just created. There are different ways of doing this. In this example, I combine the reading directly with a `print` statement, so that I see the result. Usually you would probably put the output of the reading operation into a `variable` and continue to process it.
+
+Have a go with these four different version of file reading. [give them some minutes]
+
+You have seen that you can read the whole file in one go, read single characters from the file, or a whole line. If you apply the `readline` command repeatedly, it will go on to the next line of your file.
+
+Interesting is the output of the `readlines` command. It gives you a structure that has all the lines of the file in it, as separate strings, divided by commas.
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Have a play!
+<!-- #endregion -->
+
+### _Exercises_
+
+<!-- #region slideshow={"slide_type": ""} -->
+Here are some exercise ideas for "Getting data in and out":
+- Prompt the user for a filename and write a short text into it.
+- Read it back and print the lines to the screen.
+- Experiment with different modes: 'r', 'w', 'a' to see how the file content changes.
+<!-- #endregion -->
+
+```python
+
+```
