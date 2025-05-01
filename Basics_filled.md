@@ -194,7 +194,7 @@ Please note that I am oversimplifying here a bit with regards to the terminology
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": ""} -->
-Jupyter works with cells such as these, which you execute with the play button or `Shift/Strg + Enter`:
+Jupyter works with cells such as these, which you execute with the play button or `Shift/Ctrl + Enter`:
 <!-- #endregion -->
 
 <!-- #solution -->
@@ -775,9 +775,9 @@ print(result)
 $
 \text{Fahrenheit} = (\text{Celsius} \times \frac{9}{5}) + 32
 $
+<!-- #endregion -->
 
 <!-- #solution -->
-<!-- #endregion -->
 
 ```python
 def celsius_to_fahrenheit(celsius):
@@ -814,9 +814,9 @@ _Lists_ are ordered collections of items.
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ### _<ins>Examples:</ins>_
+<!-- #endregion -->
 
 <!-- #solution -->
-<!-- #endregion -->
 
 ```python
 # Creating/Initialising a list
@@ -874,7 +874,9 @@ print(my_list[1:4]) # Include first, exclude last
 
 ```python slideshow={"slide_type": ""}
 # Print a slice of the list from the beginning
-print(my_list[:2])  # More slicing
+print(my_list[:2])
+# Print a slice of the list containing the last element
+print(list1[1:])
 ```
 
 <!-- #endsolution -->
@@ -891,11 +893,6 @@ print(len(list1))
 <!-- #endsolution -->
 
 <!-- #solution -->
-
-```python
-# Print out `list1`, a slice containing the last element
-print(list1[1:])
-```
 
 <!-- #endsolution -->
 
@@ -1000,6 +997,8 @@ print(my_list[::2])
 even_numbers = list(range(10, 31, 2))
 print(even_numbers)
 ```
+
+<!-- #endsolution -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 # <ins>4.</ins> Conditional and control flow statements
