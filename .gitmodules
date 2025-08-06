@@ -1,0 +1,3 @@
+[submodule "common-tools"]
+	path = common-tools
+	url = https://github.com/DurhamARC-Training/common-tools-for-teaching.git
