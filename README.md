@@ -1,4 +1,4 @@
-![Course logo](img/ARC448p.png)
+![Course logo](images/ARC448p.png)
 
 # Course: Learning to programme with python
 
