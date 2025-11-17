@@ -5,6 +5,6 @@ dependencies:
 - jupyter
 - jupyterlab
 - jupyterlab-deck
+- jupyterquiz
 - python
 - jupyter_contrib_nbextensions
-- jupytext
