@@ -1,0 +1,12 @@
+name: Cleanup Deleted Branch
+
+on:
+  delete
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    uses: DurhamARC-Training/PythonCourse-jupyterlite/.github/workflows/cleanup-branch-deployment.yml@main
+    secrets: inherit
