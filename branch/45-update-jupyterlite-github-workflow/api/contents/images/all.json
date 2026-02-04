@@ -1,0 +1,71 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-02-04T14:36:03.033342Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-04T14:35:37.251322Z",
+      "mimetype": "image/png",
+      "name": "ARC448p.png",
+      "path": "images/ARC448p.png",
+      "size": 36696,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-04T14:36:03.033342Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-04T14:35:37.251322Z",
+      "mimetype": "image/png",
+      "name": "icons8-python-48.png",
+      "path": "images/icons8-python-48.png",
+      "size": 1759,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-04T14:36:03.034342Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-04T14:35:37.252322Z",
+      "mimetype": "image/png",
+      "name": "qr_question1.png",
+      "path": "images/qr_question1.png",
+      "size": 4485,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-04T14:36:03.033342Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-04T14:35:37.251322Z",
+      "mimetype": "image/svg+xml",
+      "name": "Logo.svg",
+      "path": "images/Logo.svg",
+      "size": 2725,
+      "type": "file",
+      "writable": true
+    }
+  ],
+  "created": "2026-02-04T14:36:03.034342Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-02-04T14:36:03.034342Z",
+  "mimetype": null,
+  "name": "images",
+  "path": "images",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

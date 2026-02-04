@@ -1,0 +1,10 @@
+name: basic_python
+channels:
+- conda-forge
+dependencies:
+- jupyter
+- jupyterlab
+- jupyterlab-deck
+- python
+- jupyter_contrib_nbextensions
+- jupytext
