@@ -1,16 +1,10 @@
 {
   "jupyter-config-data": {
-    "appName": "jupyterlab-deck",
+    "appName": "JupyterLite",
     "appUrl": "./lab",
     "appVersion": "0.6.2",
     "baseUrl": "./",
     "defaultKernelName": "python",
-    "disabledExtensions": [
-      "@jupyterlab/drawio-extension",
-      "jupyterlab-kernel-spy",
-      "jupyterlab-tour"
-    ],
-    "exposeAppInBrowser": true,
     "faviconUrl": "./lab/favicon.ico",
     "federated_extensions": [
       {
