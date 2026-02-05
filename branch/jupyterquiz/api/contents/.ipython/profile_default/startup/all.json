@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-02-05T14:08:36.512776Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-05T14:08:33.483758Z",
+      "mimetype": "text/x-python",
+      "name": "00-install-deps.py",
+      "path": ".ipython/profile_default/startup/00-install-deps.py",
+      "size": 1493,
+      "type": "file",
+      "writable": true
+    }
+  ],
+  "created": "2026-02-05T14:08:36.512776Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-02-05T14:08:36.512776Z",
+  "mimetype": null,
+  "name": "startup",
+  "path": ".ipython/profile_default/startup",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
