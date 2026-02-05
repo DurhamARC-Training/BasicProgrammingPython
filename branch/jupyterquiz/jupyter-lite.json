@@ -3,8 +3,8 @@
     "ContentsManager": {
       "allow_hidden": true,
       "hide_globs": [
-        "**/startup",
-        "**/startup/**"
+        "**/.ipython/**",
+        "**/requirements.txt"
       ]
     },
     "appName": "jupyterlab-deck",
