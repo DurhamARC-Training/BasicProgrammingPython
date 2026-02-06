@@ -1,3 +1,26 @@
+import sys
+
+from importlib.util import find_spec
+
+async def _ensure_dependencies():
+    """Ensure jupyterquiz is installed in Pyodide."""
+    if find_spec('jupyterquiz') is None:
+        import micropip
+        await micropip.install('jupyterquiz>=2.9')
+
+# Auto-install on import
+if 'pyodide' in sys.modules:  # Only in browser
+    import asyncio
+    # Check if we're in a running event loop
+    try:
+        loop = asyncio.get_running_loop()
+        # Already in async context, can await directly
+        await _ensure_dependencies()
+    except RuntimeError:
+        # No running loop, create one
+        asyncio.run(_ensure_dependencies())
+
+# Now import normally
 import jupyterquiz
 
 def display_quiz(json_path):
