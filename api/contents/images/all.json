@@ -1,0 +1,71 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-02-17T17:28:32.464791Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-17T17:28:14.417045Z",
+      "mimetype": "image/jpeg",
+      "name": "First_Computer_Bug,_1947.jpg",
+      "path": "images/First_Computer_Bug,_1947.jpg",
+      "size": 5607442,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-17T17:28:32.477039Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-17T17:28:14.417045Z",
+      "mimetype": "image/png",
+      "name": "icons8-python-48.png",
+      "path": "images/icons8-python-48.png",
+      "size": 1759,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-17T17:28:32.462560Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-17T17:28:14.400057Z",
+      "mimetype": "image/png",
+      "name": "ARC448p.png",
+      "path": "images/ARC448p.png",
+      "size": 36696,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-17T17:28:32.476732Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-17T17:28:14.417045Z",
+      "mimetype": "image/svg+xml",
+      "name": "Logo.svg",
+      "path": "images/Logo.svg",
+      "size": 2725,
+      "type": "file",
+      "writable": true
+    }
+  ],
+  "created": "2026-02-17T17:28:32.476732Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-02-17T17:28:32.476732Z",
+  "mimetype": null,
+  "name": "images",
+  "path": "images",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
