@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-04-15T09:58:43.043793Z",
+      "created": "2026-04-15T10:09:11.407932Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-04-15T09:58:25.372404Z",
+      "last_modified": "2026-04-15T10:08:53.223060Z",
       "mimetype": "application/json",
       "name": "datatypes.json",
       "path": "quizzes/datatypes.json",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2026-04-15T09:58:43.043510Z",
+      "created": "2026-04-15T10:09:11.407623Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-04-15T09:58:25.371694Z",
+      "last_modified": "2026-04-15T10:08:53.222071Z",
       "mimetype": "text/x-python",
       "name": "__init__.py",
       "path": "quizzes/__init__.py",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2026-04-15T09:58:43.043793Z",
+  "created": "2026-04-15T10:09:11.407932Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-04-15T09:58:43.043793Z",
+  "last_modified": "2026-04-15T10:09:11.407932Z",
   "mimetype": null,
   "name": "quizzes",
   "path": "quizzes",
