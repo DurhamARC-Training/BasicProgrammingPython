@@ -2,3 +2,4 @@
 testfile.txt
 _output
 .jupyterlite.doit.db
+*.pyc

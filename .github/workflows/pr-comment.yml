@@ -1,0 +1,12 @@
+name: Add PR Deployment Comment
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  comment:
+    uses: DurhamARC-Training/PythonCourse-jupyterlite/.github/workflows/pr-comment-generation.yml@main
