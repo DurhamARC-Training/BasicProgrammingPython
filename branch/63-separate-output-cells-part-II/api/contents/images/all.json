@@ -1,0 +1,71 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-11-09T11:02:38.771379Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-11-09T11:02:21.851822Z",
+      "mimetype": "image/jpeg",
+      "name": "First_Computer_Bug,_1947.jpg",
+      "path": "images/First_Computer_Bug,_1947.jpg",
+      "size": 5607442,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-11-09T11:02:38.769699Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-11-09T11:02:21.834361Z",
+      "mimetype": "image/png",
+      "name": "ARC448p.png",
+      "path": "images/ARC448p.png",
+      "size": 36696,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-11-09T11:02:38.782370Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-11-09T11:02:21.852822Z",
+      "mimetype": "image/svg+xml",
+      "name": "Logo.svg",
+      "path": "images/Logo.svg",
+      "size": 2725,
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-11-09T11:02:38.782639Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-11-09T11:02:21.852822Z",
+      "mimetype": "image/png",
+      "name": "icons8-python-48.png",
+      "path": "images/icons8-python-48.png",
+      "size": 1759,
+      "type": "file",
+      "writable": true
+    }
+  ],
+  "created": "2026-11-09T11:02:38.782370Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-11-09T11:02:38.782370Z",
+  "mimetype": null,
+  "name": "images",
+  "path": "images",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

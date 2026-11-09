@@ -1,0 +1,3 @@
+# Prevent indexing of branch deployments
+User-agent: *
+Disallow: /
