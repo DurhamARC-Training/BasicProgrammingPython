@@ -1,1 +1,0 @@
-jupyterquiz>=2.9
